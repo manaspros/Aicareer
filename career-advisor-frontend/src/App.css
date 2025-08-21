@@ -2168,3 +2168,160 @@ body {
     min-width: auto;
   }
 }
+
+/* Questionnaire Banner Styles */
+.questionnaire-banner {
+  background: linear-gradient(135deg, #ff7b54 0%, #ff9472 100%);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+  color: white;
+  box-shadow: 0 8px 24px rgba(255, 123, 84, 0.3);
+}
+
+.questionnaire-banner.completed {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.banner-icon {
+  flex-shrink: 0;
+}
+
+.banner-icon.warning {
+  color: #fed7d7;
+}
+
+.banner-icon.success {
+  color: #d1fae5;
+}
+
+.banner-text h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.banner-text p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95em;
+}
+
+.start-questionnaire-btn,
+.complete-questionnaire-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.start-questionnaire-btn:hover,
+.complete-questionnaire-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Recommendation Card Enhancements */
+.questionnaire-required {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: #fef3cd;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  color: #92400e;
+}
+
+.warning-icon {
+  flex-shrink: 0;
+  color: #f59e0b;
+  margin-top: 2px;
+}
+
+.questionnaire-required strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #78350f;
+}
+
+.questionnaire-required p {
+  margin: 0 0 12px 0;
+  font-size: 0.9em;
+}
+
+.recommendation-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  font-size: 0.85em;
+}
+
+.confidence-score {
+  background: #e0f2fe;
+  color: #0277bd;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.personalized-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #e8f5e8;
+  color: #2e7d2e;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.personalized-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Additional responsive styles for questionnaire banner */
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .start-questionnaire-btn,
+  .complete-questionnaire-btn {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .recommendation-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Loading subtitle for questionnaire generation */
+.loading-subtitle {
+  font-size: 0.9rem !important;
+  color: #94a3b8 !important;
+  margin-top: 8px !important;
+  max-width: 400px;
+  line-height: 1.4;
+}

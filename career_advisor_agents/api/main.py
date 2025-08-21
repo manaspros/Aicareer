@@ -8,7 +8,9 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 # Load environment variables from .env file
-load_dotenv()
+# Try loading from current directory and parent directory
+load_dotenv()  # Try current directory first
+load_dotenv(project_root / ".env")  # Try project root directory
 
 from fastapi import FastAPI, HTTPException, Depends, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
@@ -312,12 +314,18 @@ async def submit_questionnaire(
             questions, responses, user_profile
         )
         
-        # Save to database
-        await user_repo.save_questionnaire_results(user_id, {
+        # Save to database with proper JSON serialization
+        questionnaire_data = {
             "responses": [r.dict() for r in responses],
             "analysis": analysis,
             "completed_at": datetime.now().isoformat()
-        })
+        }
+        
+        # Ensure all data is JSON serializable
+        import json
+        questionnaire_data = json.loads(json.dumps(questionnaire_data, default=str))
+        
+        await user_repo.save_questionnaire_results(user_id, questionnaire_data)
         
         return {
             "message": "Questionnaire submitted successfully",
@@ -503,10 +511,29 @@ async def get_career_recommendations(
         if not user_profile:
             raise HTTPException(status_code=404, detail="User not found")
         
-        # Get recommendations from career analyst
+        # Check if user has completed questionnaire for personalized recommendations
+        questionnaire_completed = user_profile.questionnaire_completed if hasattr(user_profile, 'questionnaire_completed') else False
+        
+        if not questionnaire_completed:
+            # Recommend completing questionnaire first
+            return {
+                "recommendations": [
+                    "Complete your personalized career questionnaire to unlock detailed, AI-powered career recommendations",
+                    "The questionnaire analyzes your personality, interests, values, and work preferences",
+                    "This enables us to provide highly targeted career guidance based on your unique profile"
+                ],
+                "confidence": 0.9,
+                "explanation": "To provide you with the most accurate and personalized career recommendations, I recommend completing our comprehensive career questionnaire first. This will help me understand your personality, interests, values, and work preferences to give you highly targeted career guidance.",
+                "requires_questionnaire": True,
+                "questionnaire_status": "not_completed"
+            }
+        
+        # Get personalized recommendations from career analyst
+        message = "Based on my completed questionnaire data, provide detailed career recommendations that are specifically tailored to my personality insights, interests, values, and career goals."
+        
         context = {"user_profile": user_profile.dict()}
         response = await agent_orchestrator.route_message(
-            message="Provide career recommendations",
+            message=message,
             agent_name="career_analyst",
             context=context
         )
@@ -514,7 +541,9 @@ async def get_career_recommendations(
         return {
             "recommendations": response.metadata.get("career_recommendations", []),
             "confidence": response.confidence,
-            "explanation": response.content
+            "explanation": response.content,
+            "personalized": True,
+            "questionnaire_status": "completed"
         }
         
     except HTTPException:

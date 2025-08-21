@@ -98,6 +98,12 @@ class UserProfile(BaseModel):
     interests: Optional[InterestAssessment] = None
     skills: List[Skill] = []
     
+    # Questionnaire and personalization fields
+    questionnaire_completed: bool = False
+    questionnaire_responses: Optional[Dict[str, Any]] = None
+    personality_insights: Optional[Dict[str, Any]] = None
+    interest_insights: Optional[Dict[str, Any]] = None
+    
     career_goals: List[str] = []
     values: List[str] = []
     preferred_work_environment: List[str] = []

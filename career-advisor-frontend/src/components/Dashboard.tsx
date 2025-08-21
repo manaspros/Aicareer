@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Brain, MessageSquare, TrendingUp, User, Target, Award } from 'lucide-react';
+import { Brain, MessageSquare, TrendingUp, User, Target, Award, CheckCircle, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ApiService from '../services/api';
+import OnboardingQuestionnaire from './OnboardingQuestionnaire';
 
 interface DashboardProps {
   userId: string;
@@ -12,28 +13,32 @@ interface DashboardData {
   recentConversations: any[];
   systemMetrics: any;
   recommendations: any;
+  questionnaireStatus: any;
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ userId }) => {
   const [data, setData] = useState<DashboardData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showQuestionnaire, setShowQuestionnaire] = useState(false);
 
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const [userProfile, conversations, metrics, recommendations] = await Promise.allSettled([
+        const [userProfile, conversations, metrics, recommendations, questionnaireStatus] = await Promise.allSettled([
           ApiService.getUserProfile(userId),
           ApiService.getConversationHistory(userId, 5),
           ApiService.getSystemMetrics(),
-          ApiService.getCareerRecommendations(userId)
+          ApiService.getCareerRecommendations(userId),
+          ApiService.getQuestionnaireStatus(userId)
         ]);
 
         setData({
           userProfile: userProfile.status === 'fulfilled' ? userProfile.value : null,
           recentConversations: conversations.status === 'fulfilled' ? conversations.value.conversations : [],
           systemMetrics: metrics.status === 'fulfilled' ? metrics.value : null,
-          recommendations: recommendations.status === 'fulfilled' ? recommendations.value : null
+          recommendations: recommendations.status === 'fulfilled' ? recommendations.value : null,
+          questionnaireStatus: questionnaireStatus.status === 'fulfilled' ? questionnaireStatus.value : null
         });
       } catch (error: any) {
         setError('Failed to load dashboard data');
@@ -45,6 +50,12 @@ const Dashboard: React.FC<DashboardProps> = ({ userId }) => {
 
     fetchDashboardData();
   }, [userId]);
+
+  const handleQuestionnaireComplete = (analysis: any) => {
+    setShowQuestionnaire(false);
+    // Refresh dashboard data after questionnaire completion
+    window.location.reload();
+  };
 
   if (isLoading) {
     return (
@@ -64,12 +75,59 @@ const Dashboard: React.FC<DashboardProps> = ({ userId }) => {
     );
   }
 
+  // Check questionnaire completion status
+  const questionnaireCompleted = data?.questionnaireStatus?.completed || 
+                                  data?.userProfile?.questionnaire_completed || 
+                                  data?.recommendations?.questionnaire_status === 'completed';
+
+  if (showQuestionnaire) {
+    return (
+      <div className="dashboard">
+        <OnboardingQuestionnaire
+          userId={userId}
+          onComplete={handleQuestionnaireComplete}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="dashboard">
       <div className="dashboard-header">
         <h1>Welcome back, {data.userProfile?.name || 'User'}!</h1>
         <p>Your AI-powered career development hub</p>
       </div>
+
+      {/* Questionnaire Status Banner */}
+      {!questionnaireCompleted && (
+        <div className="questionnaire-banner">
+          <div className="banner-content">
+            <AlertCircle size={24} className="banner-icon warning" />
+            <div className="banner-text">
+              <h3>Complete Your Career Profile</h3>
+              <p>Unlock personalized AI recommendations by completing our career questionnaire.</p>
+            </div>
+            <button 
+              onClick={() => setShowQuestionnaire(true)}
+              className="start-questionnaire-btn"
+            >
+              Start Questionnaire
+            </button>
+          </div>
+        </div>
+      )}
+
+      {questionnaireCompleted && (
+        <div className="questionnaire-banner completed">
+          <div className="banner-content">
+            <CheckCircle size={24} className="banner-icon success" />
+            <div className="banner-text">
+              <h3>Career Profile Complete!</h3>
+              <p>Your personalized AI recommendations are now available.</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="dashboard-grid">
         {/* Quick Actions */}
@@ -201,11 +259,36 @@ const Dashboard: React.FC<DashboardProps> = ({ userId }) => {
               Career Recommendations
             </h2>
             <div className="recommendations-content">
-              {data.recommendations.recommendations?.length > 0 ? (
+              {data.recommendations.requires_questionnaire ? (
+                <div className="questionnaire-required">
+                  <AlertCircle size={20} className="warning-icon" />
+                  <div>
+                    <strong>Questionnaire Required</strong>
+                    <p>Complete your career questionnaire to unlock personalized AI recommendations</p>
+                    <button 
+                      onClick={() => setShowQuestionnaire(true)}
+                      className="complete-questionnaire-btn"
+                    >
+                      Complete Questionnaire
+                    </button>
+                  </div>
+                </div>
+              ) : data.recommendations.recommendations?.length > 0 ? (
                 <>
                   <div className="recommendation-highlight">
-                    <strong>Top Recommendation:</strong>
+                    <strong>{questionnaireCompleted ? 'Personalized Recommendation:' : 'Top Recommendation:'}</strong>
                     <p>{data.recommendations.recommendations[0]}</p>
+                  </div>
+                  <div className="recommendation-meta">
+                    <span className="confidence-score">
+                      Confidence: {Math.round((data.recommendations.confidence || 0) * 100)}%
+                    </span>
+                    {data.recommendations.personalized && (
+                      <span className="personalized-badge">
+                        <CheckCircle size={16} />
+                        Personalized
+                      </span>
+                    )}
                   </div>
                   <Link to="/analysis" className="view-all-recommendations">
                     View All Recommendations

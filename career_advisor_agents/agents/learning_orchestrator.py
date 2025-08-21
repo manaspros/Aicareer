@@ -561,11 +561,40 @@ I'll create a realistic, achievable schedule that maximizes your learning effici
         # Use LLM for general learning guidance
         system_prompt = self.get_system_prompt()
         
-        full_prompt = f"""{system_prompt}
+        # Add personalized context if available
+        context_info = ""
+        if context:
+            user_profile = context.get("user_profile", {})
+            if user_profile.get('questionnaire_completed') and user_profile.get('personality_insights'):
+                personality_insights = user_profile.get('personality_insights', {})
+                context_info = f"""
+                
+PERSONALIZED LEARNING CONTEXT:
+- Questionnaire Status: Completed - Use this for personalized learning guidance
+- Learning Style: {personality_insights.get('learning_style', personality_insights.get('work_style', 'Not specified'))}
+- Personality Profile: {personality_insights.get('personality_summary', 'Available')}
+- Career Goals: {personality_insights.get('career_motivations', 'Not specified')}
+- Strengths: {personality_insights.get('strengths', 'Not specified')}
+- Preferred Learning Environment: {personality_insights.get('work_environment_preferences', 'Not specified')}
+
+LEARNING NOTE: Customize learning strategies to match their learning style, personality, and career objectives.
+"""
+            elif user_profile.get('questionnaire_completed'):
+                context_info = f"""
+
+PERSONALIZED CONTEXT: User has completed questionnaire - provide more targeted learning guidance
+"""
+            else:
+                context_info = f"""
+
+NOTE: User hasn't completed questionnaire yet - consider suggesting it for more personalized learning path recommendations
+"""
+        
+        full_prompt = f"""{system_prompt}{context_info}
 
 User message: {message}
 
-Provide helpful guidance about learning strategies, resource selection, or study planning."""
+Provide helpful guidance about learning strategies, resource selection, or study planning based on their profile."""
 
         try:
             response = await self.llm.ainvoke([{"role": "user", "content": full_prompt}])

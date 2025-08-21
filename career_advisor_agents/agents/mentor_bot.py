@@ -719,12 +719,43 @@ How are you planning to celebrate this win? And what's the next exciting challen
         
         conversation_context = ""
         if context:
+            user_profile = context.get("user_profile", {})
             conversation_context = f"""
 Context about the user:
 - Current role: {context.get('current_role', 'Not specified')}
 - Experience level: {context.get('experience_level', 'Not specified')}
 - Goals: {', '.join(context.get('goals', [])) if context.get('goals') else 'Not specified'}
 - Recent challenges: {', '.join(context.get('challenges', [])) if context.get('challenges') else 'None mentioned'}
+"""
+            
+            # Add personalized questionnaire insights if available
+            if user_profile.get('questionnaire_completed') and user_profile.get('personality_insights'):
+                personality_insights = user_profile.get('personality_insights', {})
+                conversation_context += f"""
+
+PERSONALIZED INSIGHTS FROM QUESTIONNAIRE:
+- Questionnaire Status: Completed - Use this data to personalize guidance
+- Personality Profile: {personality_insights.get('personality_summary', 'Available')}
+- Interest Areas: {personality_insights.get('interest_summary', 'Available')}
+- Career Motivations: {personality_insights.get('career_motivations', 'Not specified')}
+- Work Style Preferences: {personality_insights.get('work_style', 'Not specified')}
+- Core Values: {personality_insights.get('values', 'Not specified')}
+- Key Strengths: {personality_insights.get('strengths', 'Not specified')}
+- Areas for Growth: {personality_insights.get('growth_areas', 'Not specified')}
+
+MENTORING NOTE: Use these personalized insights to provide more targeted, meaningful guidance that resonates with their personality, values, and career motivations.
+"""
+            elif user_profile.get('questionnaire_completed'):
+                conversation_context += f"""
+
+QUESTIONNAIRE STATUS: Completed but limited insights available
+NOTE: User has completed questionnaire - reference this to provide more personalized guidance
+"""
+            else:
+                conversation_context += f"""
+
+QUESTIONNAIRE STATUS: Not completed
+MENTORING OPPORTUNITY: Consider gently suggesting they complete the career questionnaire for more personalized guidance
 """
 
         full_prompt = f"""{system_prompt}

@@ -583,6 +583,12 @@ class UserRepository:
             location=db_user.location,
             education_level=EducationLevel(db_user.education_level) if db_user.education_level else None,
             career_stage=CareerStage(db_user.career_stage) if db_user.career_stage else None,
+            # Questionnaire fields
+            questionnaire_completed=db_user.questionnaire_completed or False,
+            questionnaire_responses=db_user.questionnaire_responses,
+            personality_insights=db_user.personality_insights,
+            interest_insights=db_user.interest_insights,
+            # Other fields
             career_goals=db_user.career_goals or [],
             values=db_user.values or [],
             preferred_work_environment=db_user.preferred_work_environment or [],
@@ -613,14 +619,29 @@ class UserRepository:
                 if not db_user:
                     raise ValueError(f"User {user_id} not found")
                 
-                # Update user with questionnaire results
+                # Update user with questionnaire results (ensure JSON serializable)
                 db_user.questionnaire_completed = True
-                db_user.questionnaire_responses = results
                 
-                # Extract and save insights
+                # Ensure results are JSON serializable
+                import json
+                safe_results = json.loads(json.dumps(results, default=str))
+                db_user.questionnaire_responses = safe_results
+                
+                # Extract and save insights (ensure JSON serializable)
                 analysis = results.get("analysis", {})
-                db_user.personality_insights = analysis.get("personality_insights")
-                db_user.interest_insights = analysis.get("interest_insights")
+                
+                # Convert to JSON-safe format
+                import json
+                personality_insights = analysis.get("personality_insights")
+                if personality_insights:
+                    personality_insights = json.loads(json.dumps(personality_insights, default=str))
+                    
+                interest_insights = analysis.get("interest_insights")  
+                if interest_insights:
+                    interest_insights = json.loads(json.dumps(interest_insights, default=str))
+                
+                db_user.personality_insights = personality_insights
+                db_user.interest_insights = interest_insights
                 db_user.updated_at = datetime.utcnow()
                 
                 await session.commit()

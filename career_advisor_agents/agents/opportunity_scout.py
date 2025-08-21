@@ -707,11 +707,41 @@ Remember: Networking is about building genuine relationships, not just asking fo
         # Use LLM for general opportunity guidance
         system_prompt = self.get_system_prompt()
         
-        full_prompt = f"""{system_prompt}
+        # Add personalized context if available
+        context_info = ""
+        if context:
+            user_profile = context.get("user_profile", {})
+            if user_profile.get('questionnaire_completed') and user_profile.get('personality_insights'):
+                personality_insights = user_profile.get('personality_insights', {})
+                context_info = f"""
+                
+PERSONALIZED OPPORTUNITY CONTEXT:
+- Questionnaire Status: Completed - Use this for personalized opportunity guidance
+- Career Goals: {personality_insights.get('career_motivations', 'Not specified')}
+- Interest Areas: {personality_insights.get('interest_summary', 'Available')}
+- Work Environment Preferences: {personality_insights.get('work_environment_preferences', 'Not specified')}
+- Values and Priorities: {personality_insights.get('values', 'Not specified')}
+- Strengths to Leverage: {personality_insights.get('strengths', 'Not specified')}
+- Personality Profile: {personality_insights.get('personality_summary', 'Available')}
+
+OPPORTUNITY NOTE: Match opportunities to their interests, values, work preferences, and career motivations for better fit.
+"""
+            elif user_profile.get('questionnaire_completed'):
+                context_info = f"""
+
+PERSONALIZED CONTEXT: User has completed questionnaire - provide more targeted opportunity guidance
+"""
+            else:
+                context_info = f"""
+
+NOTE: User hasn't completed questionnaire yet - consider suggesting it for more personalized opportunity matching
+"""
+        
+        full_prompt = f"""{system_prompt}{context_info}
 
 User message: {message}
 
-Provide helpful guidance about finding opportunities, job searching, or career exploration."""
+Provide helpful guidance about finding opportunities, job searching, or career exploration based on their profile."""
 
         try:
             response = await self.llm.ainvoke([{"role": "user", "content": full_prompt}])

@@ -106,8 +106,12 @@ Categories: "personality", "interests", "values", "goals", "background"
 Importance: 1-5 (5 = most important)"""
 
         try:
-            # Call Google Gemini AI
-            response = await self.llm.ainvoke([{"role": "user", "content": prompt}])
+            # Call Google Gemini AI with timeout
+            import asyncio
+            response = await asyncio.wait_for(
+                self.llm.ainvoke([{"role": "user", "content": prompt}]), 
+                timeout=15.0  # 15 second timeout for AI generation
+            )
             ai_response = response.content if hasattr(response, 'content') else str(response)
             
             # Extract JSON from response
@@ -130,9 +134,13 @@ Importance: 1-5 (5 = most important)"""
             
             return questions[:20]  # Limit to 20 questions max
             
+        except asyncio.TimeoutError:
+            print(f"AI questionnaire generation timed out after 15 seconds - using fallback questions")
+            # Return fallback questions when AI takes too long
+            return self._get_fallback_questions()
         except Exception as e:
             print(f"Error generating questionnaire: {str(e)}")
-            # Return fallback questions
+            # Return fallback questions for any other error
             return self._get_fallback_questions()
     
     def _extract_json_from_response(self, response: str) -> List[Dict[str, Any]]:

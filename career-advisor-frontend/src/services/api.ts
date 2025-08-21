@@ -110,8 +110,16 @@ export class ApiService {
 
   // Questionnaire Management
   static async generateQuestionnaire(userId: string) {
-    const response = await api.get(`/api/questionnaire/generate/${userId}`);
-    return response.data;
+    try {
+      // Use longer timeout for AI questionnaire generation (30 seconds)
+      const response = await api.get(`/api/questionnaire/generate/${userId}`, {
+        timeout: 30000
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Questionnaire generation error:', error);
+      throw new Error('Failed to generate questionnaire. The AI is taking longer than expected to create personalized questions.');
+    }
   }
 
   static async submitQuestionnaire(userId: string, submission: any) {
@@ -235,7 +243,10 @@ export class ApiService {
           'Practice technical interviewing with platforms like LeetCode or HackerRank'
         ],
         confidence: 0.87,
-        explanation: 'These recommendations are based on your technical background, career goals, and current market trends in your field.'
+        explanation: 'These recommendations are based on your technical background, career goals, and current market trends in your field.',
+        personalized: false,
+        questionnaire_status: 'not_completed',
+        requires_questionnaire: true
       };
     }
     
@@ -243,16 +254,18 @@ export class ApiService {
       const response = await api.get(`/api/agents/recommendations/${userId}`);
       return response.data;
     } catch (error) {
-      // Return mock recommendations
+      // Return mock recommendations with questionnaire prompt
       return {
         recommendations: [
-          'Focus on developing data visualization skills with tools like Tableau or PowerBI',
-          'Consider pursuing a certification in cloud computing (AWS, Azure, or GCP)',
-          'Build a strong LinkedIn presence and engage with industry thought leaders',
-          'Practice technical interviewing with platforms like LeetCode or HackerRank'
+          'Complete your personalized career questionnaire to unlock detailed, AI-powered career recommendations',
+          'The questionnaire analyzes your personality, interests, values, and work preferences',
+          'This enables us to provide highly targeted career guidance based on your unique profile'
         ],
-        confidence: 0.87,
-        explanation: 'These recommendations are based on your technical background, career goals, and current market trends in your field.'
+        confidence: 0.9,
+        explanation: 'To provide you with the most accurate and personalized career recommendations, complete our comprehensive career questionnaire first.',
+        personalized: false,
+        questionnaire_status: 'not_completed',
+        requires_questionnaire: true
       };
     }
   }

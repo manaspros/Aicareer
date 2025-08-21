@@ -32,11 +32,13 @@ const OnboardingQuestionnaire: React.FC<QuestionnaireProps> = ({ userId, onCompl
   const loadQuestionnaire = async () => {
     try {
       setIsLoading(true);
+      setError('');
       const data = await ApiService.generateQuestionnaire(userId);
       setQuestions(data.questions);
       setIsLoading(false);
     } catch (err: any) {
-      setError('Failed to load questionnaire. Please try again.');
+      console.error('Questionnaire loading error:', err);
+      setError('The AI is taking longer than expected to create your personalized questions. This may take up to 30 seconds. Please wait or try refreshing.');
       setIsLoading(false);
     }
   };
@@ -149,7 +151,8 @@ const OnboardingQuestionnaire: React.FC<QuestionnaireProps> = ({ userId, onCompl
       <div className="questionnaire-container">
         <div className="loading-state">
           <div className="loading-spinner"></div>
-          <p>Generating your personalized questionnaire...</p>
+          <p>AI is generating your personalized questionnaire...</p>
+          <p className="loading-subtitle">This may take up to 30 seconds as we create questions tailored specifically to your profile.</p>
         </div>
       </div>
     );
