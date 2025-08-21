@@ -1,0 +1,361 @@
+{
+  "industry_trends": [
+    {
+      "id": "ai_automation",
+      "name": "Artificial Intelligence and Automation",
+      "description": "Widespread adoption of AI and automation technologies across industries",
+      "impact_level": "High",
+      "time_horizon": "Short-term (1-3 years)",
+      "affected_industries": ["Technology", "Healthcare", "Finance", "Manufacturing", "Transportation"],
+      "emerging_skills": ["Machine Learning", "AI Ethics", "Human-AI Collaboration", "Process Automation"],
+      "declining_skills": ["Manual Data Entry", "Routine Analysis", "Basic Customer Service"],
+      "affected_roles": {
+        "high_impact": ["Data Entry Clerk", "Basic Analyst", "Customer Service Rep"],
+        "medium_impact": ["Financial Analyst", "Marketing Specialist", "Project Coordinator"],
+        "low_impact": ["Software Engineer", "Data Scientist", "Creative Director"]
+      },
+      "opportunities": [
+        "AI Specialist roles increasing by 40% annually",
+        "New hybrid roles combining domain expertise with AI knowledge",
+        "Increased demand for AI ethics and governance professionals"
+      ],
+      "challenges": [
+        "Need for widespread reskilling initiatives",
+        "Potential short-term job displacement",
+        "Widening skills gap between AI-literate and traditional workers"
+      ],
+      "preparation_strategies": [
+        "Develop AI literacy and understanding",
+        "Focus on uniquely human skills (creativity, empathy, complex reasoning)",
+        "Learn to work alongside AI tools and systems",
+        "Specialize in AI implementation and strategy"
+      ],
+      "confidence_score": 95,
+      "data_sources": ["McKinsey Global Institute", "World Economic Forum", "Bureau of Labor Statistics"]
+    },
+    {
+      "id": "remote_work_transformation",
+      "name": "Remote and Hybrid Work Models",
+      "description": "Permanent shift towards flexible work arrangements post-pandemic",
+      "impact_level": "High",
+      "time_horizon": "Medium-term (2-5 years)",
+      "affected_industries": ["Technology", "Finance", "Consulting", "Marketing", "Education"],
+      "emerging_skills": ["Virtual Collaboration", "Remote Leadership", "Digital Communication", "Self-Management"],
+      "declining_skills": ["In-Person Meeting Management", "Physical Office Management"],
+      "affected_roles": {
+        "high_impact": ["Middle Management", "HR Professionals", "IT Support"],
+        "medium_impact": ["Sales Representatives", "Project Managers", "Trainers"],
+        "low_impact": ["Manufacturing Workers", "Healthcare Providers", "Retail Workers"]
+      },
+      "opportunities": [
+        "Access to global talent pool",
+        "Reduced geographical limitations for job opportunities",
+        "Growth in remote work facilitation services and tools"
+      ],
+      "challenges": [
+        "Need for new management and collaboration skills",
+        "Potential for increased isolation and mental health issues",
+        "Cybersecurity and data protection concerns"
+      ],
+      "preparation_strategies": [
+        "Develop strong digital communication skills",
+        "Master remote collaboration tools and platforms",
+        "Build self-discipline and time management skills",
+        "Learn virtual leadership and team building"
+      ],
+      "confidence_score": 90,
+      "data_sources": ["Gallup Workplace Research", "PwC Future of Work Study", "Harvard Business Review"]
+    },
+    {
+      "id": "sustainability_focus",
+      "name": "Sustainability and Green Economy",
+      "description": "Growing emphasis on environmental sustainability and clean energy",
+      "impact_level": "Medium-High",
+      "time_horizon": "Long-term (5-10 years)",
+      "affected_industries": ["Energy", "Manufacturing", "Transportation", "Construction", "Agriculture"],
+      "emerging_skills": ["Sustainability Consulting", "Renewable Energy Systems", "Environmental Compliance", "Carbon Accounting"],
+      "declining_skills": ["Traditional Energy Systems", "High-Carbon Manufacturing Processes"],
+      "affected_roles": {
+        "high_impact": ["Environmental Engineer", "Sustainability Consultant", "Renewable Energy Technician"],
+        "medium_impact": ["Operations Manager", "Supply Chain Manager", "Product Manager"],
+        "low_impact": ["Software Engineer", "Healthcare Provider", "Teacher"]
+      },
+      "opportunities": [
+        "Green jobs expected to grow by 24% through 2030",
+        "New roles in carbon management and ESG reporting",
+        "Innovation opportunities in clean technology"
+      ],
+      "challenges": [
+        "Need for significant retraining in traditional industries",
+        "Higher initial costs for sustainable technologies",
+        "Regulatory complexity and changing standards"
+      ],
+      "preparation_strategies": [
+        "Develop knowledge of sustainability frameworks and metrics",
+        "Learn about renewable energy and clean technologies",
+        "Understand ESG (Environmental, Social, Governance) principles",
+        "Gain experience with sustainability reporting and compliance"
+      ],
+      "confidence_score": 85,
+      "data_sources": ["International Energy Agency", "Green Jobs Report", "UN Environment Programme"]
+    },
+    {
+      "id": "healthcare_digitization",
+      "name": "Healthcare Digital Transformation",
+      "description": "Rapid digitization of healthcare delivery and patient care",
+      "impact_level": "High",
+      "time_horizon": "Short-term (1-3 years)",
+      "affected_industries": ["Healthcare", "Pharmaceuticals", "Insurance", "Technology"],
+      "emerging_skills": ["Telemedicine", "Health Informatics", "Digital Therapeutics", "Healthcare Analytics"],
+      "declining_skills": ["Traditional Medical Records Management", "Manual Scheduling Systems"],
+      "affected_roles": {
+        "high_impact": ["Healthcare Administrator", "Medical Records Clerk", "Insurance Adjuster"],
+        "medium_impact": ["Nurse", "Physician", "Pharmacist"],
+        "low_impact": ["Surgeon", "Emergency Medical Technician", "Mental Health Counselor"]
+      },
+      "opportunities": [
+        "Growth in telehealth platforms and services",
+        "Increased demand for health data analysts",
+        "New roles in digital health product development"
+      ],
+      "challenges": [
+        "Privacy and security concerns with patient data",
+        "Need for healthcare professionals to learn new technologies",
+        "Digital divide affecting patient access"
+      ],
+      "preparation_strategies": [
+        "Learn health informatics and healthcare data analysis",
+        "Understand telemedicine platforms and best practices",
+        "Develop skills in healthcare technology implementation",
+        "Study healthcare compliance and privacy regulations"
+      ],
+      "confidence_score": 88,
+      "data_sources": ["American Medical Association", "Healthcare IT Research", "CDC Health Technology"]
+    },
+    {
+      "id": "skills_based_hiring",
+      "name": "Skills-Based Hiring and Continuous Learning",
+      "description": "Shift from degree-based to skills-based hiring and emphasis on lifelong learning",
+      "impact_level": "Medium-High",
+      "time_horizon": "Medium-term (2-5 years)",
+      "affected_industries": ["Technology", "Finance", "Healthcare", "Manufacturing", "Retail"],
+      "emerging_skills": ["Continuous Learning", "Skill Documentation", "Portfolio Development", "Micro-Credentials"],
+      "declining_skills": ["Traditional Credential Verification", "Static Skill Assessment"],
+      "affected_roles": {
+        "high_impact": ["HR Recruiter", "Talent Acquisition Specialist", "Training Coordinator"],
+        "medium_impact": ["Manager", "Team Lead", "Career Counselor"],
+        "low_impact": ["Individual Contributors", "Specialists", "Consultants"]
+      },
+      "opportunities": [
+        "More accessible career transitions across industries",
+        "Growth in micro-learning and certification platforms",
+        "Increased value of demonstrable skills over formal education"
+      ],
+      "challenges": [
+        "Need for better skill assessment and verification methods",
+        "Employers adapting to new evaluation criteria",
+        "Workers learning to document and showcase skills effectively"
+      ],
+      "preparation_strategies": [
+        "Build a strong portfolio showcasing your skills",
+        "Pursue relevant micro-credentials and certifications",
+        "Develop skill documentation and presentation abilities",
+        "Focus on practical, demonstrable competencies"
+      ],
+      "confidence_score": 80,
+      "data_sources": ["Society for Human Resource Management", "LinkedIn Workforce Report", "World Economic Forum"]
+    },
+    {
+      "id": "cybersecurity_expansion",
+      "name": "Cybersecurity and Data Privacy Focus",
+      "description": "Increased emphasis on cybersecurity due to rising digital threats",
+      "impact_level": "High",
+      "time_horizon": "Short-term (1-3 years)",
+      "affected_industries": ["Technology", "Finance", "Healthcare", "Government", "Retail"],
+      "emerging_skills": ["Cybersecurity Analysis", "Threat Detection", "Privacy Compliance", "Security Architecture"],
+      "declining_skills": ["Basic IT Support", "Traditional Network Administration"],
+      "affected_roles": {
+        "high_impact": ["IT Administrator", "Compliance Officer", "Risk Manager"],
+        "medium_impact": ["Software Engineer", "Data Analyst", "Project Manager"],
+        "low_impact": ["Marketing Specialist", "Sales Representative", "Teacher"]
+      },
+      "opportunities": [
+        "Cybersecurity jobs growing 31% faster than average",
+        "High salaries and job security in security roles",
+        "Increasing demand across all industries and company sizes"
+      ],
+      "challenges": [
+        "Significant skills shortage in cybersecurity",
+        "Rapidly evolving threat landscape requiring constant learning",
+        "High stress and responsibility in security roles"
+      ],
+      "preparation_strategies": [
+        "Obtain cybersecurity certifications (CISSP, Security+, etc.)",
+        "Learn about threat detection and incident response",
+        "Understand privacy regulations (GDPR, CCPA, etc.)",
+        "Develop skills in security architecture and risk assessment"
+      ],
+      "confidence_score": 92,
+      "data_sources": ["Cybersecurity and Infrastructure Security Agency", "ISC2 Workforce Study", "Cybersecurity Ventures"]
+    },
+    {
+      "id": "gig_economy_growth",
+      "name": "Gig Economy and Freelance Work",
+      "description": "Continued growth of independent work and flexible employment arrangements",
+      "impact_level": "Medium",
+      "time_horizon": "Medium-term (2-5 years)",
+      "affected_industries": ["Technology", "Creative Services", "Transportation", "Delivery", "Consulting"],
+      "emerging_skills": ["Self-Marketing", "Client Management", "Financial Management", "Platform Navigation"],
+      "declining_skills": ["Traditional Employee Onboarding", "Long-term Career Ladder Navigation"],
+      "affected_roles": {
+        "high_impact": ["Freelancer", "Consultant", "Contractor"],
+        "medium_impact": ["Project Manager", "Creative Professional", "Technical Specialist"],
+        "low_impact": ["Healthcare Provider", "Teacher", "Government Worker"]
+      },
+      "opportunities": [
+        "Flexibility and autonomy in work arrangements",
+        "Access to diverse projects and learning opportunities",
+        "Potential for higher earnings through specialization"
+      ],
+      "challenges": [
+        "Income instability and lack of traditional benefits",
+        "Need for strong self-management and business skills",
+        "Increased competition in freelance marketplaces"
+      ],
+      "preparation_strategies": [
+        "Develop strong personal branding and marketing skills",
+        "Learn financial management and business fundamentals",
+        "Build a diverse portfolio of skills and experiences",
+        "Master online platforms and digital networking"
+      ],
+      "confidence_score": 75,
+      "data_sources": ["Freelancers Union", "Upwork Future of Work Report", "McKinsey Independent Work Study"]
+    }
+  ],
+  "cross_industry_impacts": [
+    {
+      "trend": "ai_automation",
+      "industries": {
+        "technology": {"impact_score": 9.5, "timeline": "immediate", "transformation_type": "enhancement"},
+        "healthcare": {"impact_score": 8.7, "timeline": "short_term", "transformation_type": "optimization"},
+        "finance": {"impact_score": 9.2, "timeline": "immediate", "transformation_type": "disruption"},
+        "manufacturing": {"impact_score": 8.9, "timeline": "short_term", "transformation_type": "automation"},
+        "retail": {"impact_score": 7.8, "timeline": "medium_term", "transformation_type": "enhancement"}
+      }
+    },
+    {
+      "trend": "remote_work_transformation",
+      "industries": {
+        "technology": {"impact_score": 9.0, "timeline": "implemented", "transformation_type": "cultural_shift"},
+        "finance": {"impact_score": 8.5, "timeline": "short_term", "transformation_type": "operational_change"},
+        "education": {"impact_score": 8.8, "timeline": "implemented", "transformation_type": "delivery_method"},
+        "consulting": {"impact_score": 9.1, "timeline": "implemented", "transformation_type": "service_delivery"},
+        "manufacturing": {"impact_score": 3.2, "timeline": "long_term", "transformation_type": "limited_application"}
+      }
+    }
+  ],
+  "skill_demand_forecasts": [
+    {
+      "skill_category": "AI and Machine Learning",
+      "current_demand": 85,
+      "projected_demand_2025": 95,
+      "projected_demand_2030": 97,
+      "growth_drivers": ["Automation adoption", "Data-driven decision making", "Competitive advantage"],
+      "key_roles": ["Machine Learning Engineer", "AI Product Manager", "Data Scientist"],
+      "salary_trend": "Increasing - 15-25% premium expected"
+    },
+    {
+      "skill_category": "Cybersecurity",
+      "current_demand": 92,
+      "projected_demand_2025": 96,
+      "projected_demand_2030": 95,
+      "growth_drivers": ["Increasing cyber threats", "Regulatory requirements", "Digital transformation"],
+      "key_roles": ["Security Analyst", "CISO", "Penetration Tester"],
+      "salary_trend": "Strong growth - 20-30% premium"
+    },
+    {
+      "skill_category": "Digital Marketing",
+      "current_demand": 78,
+      "projected_demand_2025": 82,
+      "projected_demand_2030": 80,
+      "growth_drivers": ["Digital-first business models", "E-commerce growth", "Social media expansion"],
+      "key_roles": ["Digital Marketing Manager", "SEO Specialist", "Content Strategist"],
+      "salary_trend": "Moderate growth - 5-10% premium"
+    },
+    {
+      "skill_category": "Healthcare Technology",
+      "current_demand": 70,
+      "projected_demand_2025": 88,
+      "projected_demand_2030": 92,
+      "growth_drivers": ["Aging population", "Telemedicine adoption", "Health data analytics"],
+      "key_roles": ["Health Informatics Specialist", "Telehealth Coordinator", "Medical Data Analyst"],
+      "salary_trend": "Rapid growth - 20-35% premium expected"
+    },
+    {
+      "skill_category": "Sustainability and ESG",
+      "current_demand": 55,
+      "projected_demand_2025": 75,
+      "projected_demand_2030": 85,
+      "growth_drivers": ["Climate regulations", "Investor pressure", "Consumer demand"],
+      "key_roles": ["Sustainability Manager", "ESG Analyst", "Carbon Accountant"],
+      "salary_trend": "Emerging premium - 10-20% above average"
+    }
+  ],
+  "regional_variations": [
+    {
+      "region": "North America",
+      "key_trends": ["AI/ML adoption", "Remote work normalization", "Cybersecurity focus"],
+      "growth_industries": ["Technology", "Healthcare", "Renewable Energy"],
+      "skill_priorities": ["Technical skills", "Digital literacy", "Cybersecurity"],
+      "regulatory_impacts": ["Privacy laws", "AI governance", "Labor regulations"]
+    },
+    {
+      "region": "Europe",
+      "key_trends": ["Sustainability mandate", "Digital transformation", "Skills-based hiring"],
+      "growth_industries": ["Green Technology", "Healthcare", "Digital Services"],
+      "skill_priorities": ["Sustainability knowledge", "Digital skills", "Multilingual abilities"],
+      "regulatory_impacts": ["GDPR", "Green Deal regulations", "AI Act"]
+    },
+    {
+      "region": "Asia-Pacific",
+      "key_trends": ["Manufacturing automation", "Digital payments", "Healthcare innovation"],
+      "growth_industries": ["Technology", "Manufacturing", "Financial Services"],
+      "skill_priorities": ["Technical expertise", "Innovation", "Cross-cultural communication"],
+      "regulatory_impacts": ["Data localization", "AI governance", "Trade policies"]
+    }
+  ],
+  "future_skills_predictions": [
+    {
+      "time_horizon": "2025",
+      "top_emerging_skills": [
+        "AI Prompt Engineering",
+        "Human-AI Collaboration",
+        "Quantum Computing Basics",
+        "Extended Reality (AR/VR/MR)",
+        "Blockchain Applications"
+      ],
+      "declining_skills": [
+        "Basic Data Entry",
+        "Manual Testing",
+        "Traditional Customer Service",
+        "Print Media Design"
+      ]
+    },
+    {
+      "time_horizon": "2030",
+      "top_emerging_skills": [
+        "Quantum Machine Learning",
+        "Bioengineering Fundamentals",
+        "Space Technology",
+        "Climate Adaptation Planning",
+        "Neuro-Computer Interfaces"
+      ],
+      "declining_skills": [
+        "Traditional Financial Analysis",
+        "Basic Programming",
+        "Manual Quality Control",
+        "Conventional Marketing Research"
+      ]
+    }
+  ]
+}

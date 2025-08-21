@@ -1,0 +1,390 @@
+{
+  "career_paths": [
+    {
+      "id": "software_engineer",
+      "title": "Software Engineer",
+      "category": "Technology",
+      "description": "Designs, develops, and maintains software applications and systems",
+      "required_skills": ["Programming", "Problem Solving", "System Design", "Testing"],
+      "preferred_skills": ["Cloud Computing", "DevOps", "Data Structures", "Algorithms"],
+      "education_requirements": ["Bachelor's in Computer Science or related field", "Coding bootcamp", "Self-taught with strong portfolio"],
+      "experience_levels": {
+        "entry": {
+          "title": "Junior Software Engineer",
+          "years_experience": "0-2",
+          "salary_range": {"min": 65000, "max": 85000, "currency": "USD"},
+          "responsibilities": ["Write clean, maintainable code", "Debug and fix issues", "Participate in code reviews", "Learn new technologies"]
+        },
+        "mid": {
+          "title": "Software Engineer",
+          "years_experience": "2-5",
+          "salary_range": {"min": 85000, "max": 120000, "currency": "USD"},
+          "responsibilities": ["Lead feature development", "Mentor junior developers", "System design", "Technical decision making"]
+        },
+        "senior": {
+          "title": "Senior Software Engineer",
+          "years_experience": "5-8",
+          "salary_range": {"min": 120000, "max": 160000, "currency": "USD"},
+          "responsibilities": ["Architect systems", "Lead technical initiatives", "Cross-team collaboration", "Technical mentoring"]
+        },
+        "principal": {
+          "title": "Principal Software Engineer",
+          "years_experience": "8+",
+          "salary_range": {"min": 160000, "max": 220000, "currency": "USD"},
+          "responsibilities": ["Technical strategy", "Company-wide technical decisions", "Innovation leadership", "Team building"]
+        }
+      },
+      "growth_outlook": "Excellent - 22% growth expected through 2030",
+      "work_environment": ["Remote-friendly", "Collaborative teams", "Fast-paced", "Continuous learning"],
+      "typical_day": "Write code, attend stand-ups, review pull requests, collaborate with product managers and designers",
+      "personality_fit": {
+        "openness": 75,
+        "conscientiousness": 80,
+        "extraversion": 50,
+        "agreeableness": 60,
+        "neuroticism": 40
+      },
+      "holland_code": ["investigative", "realistic"],
+      "related_roles": ["DevOps Engineer", "Data Engineer", "Site Reliability Engineer", "Technical Lead"]
+    },
+    {
+      "id": "data_scientist",
+      "title": "Data Scientist",
+      "category": "Technology/Analytics",
+      "description": "Analyzes complex data to extract insights and build predictive models",
+      "required_skills": ["Python/R", "Statistics", "Machine Learning", "Data Visualization"],
+      "preferred_skills": ["Deep Learning", "SQL", "Big Data Technologies", "Domain Expertise"],
+      "education_requirements": ["Master's in Data Science, Statistics, or related field", "Bachelor's with strong quantitative background", "PhD preferred for research roles"],
+      "experience_levels": {
+        "entry": {
+          "title": "Data Scientist I",
+          "years_experience": "0-2",
+          "salary_range": {"min": 75000, "max": 95000, "currency": "USD"},
+          "responsibilities": ["Clean and analyze data", "Build basic models", "Create visualizations", "Support senior team members"]
+        },
+        "mid": {
+          "title": "Data Scientist II",
+          "years_experience": "2-5",
+          "salary_range": {"min": 95000, "max": 130000, "currency": "USD"},
+          "responsibilities": ["Design experiments", "Build production models", "Communicate findings to stakeholders", "Mentor junior staff"]
+        },
+        "senior": {
+          "title": "Senior Data Scientist",
+          "years_experience": "5-8",
+          "salary_range": {"min": 130000, "max": 170000, "currency": "USD"},
+          "responsibilities": ["Lead data science projects", "Develop strategy", "Cross-functional collaboration", "Technical leadership"]
+        },
+        "principal": {
+          "title": "Principal Data Scientist",
+          "years_experience": "8+",
+          "salary_range": {"min": 170000, "max": 250000, "currency": "USD"},
+          "responsibilities": ["Research and innovation", "Company-wide data strategy", "Team leadership", "External representation"]
+        }
+      },
+      "growth_outlook": "Excellent - 31% growth expected through 2030",
+      "work_environment": ["Data-driven culture", "Cross-functional teams", "Research-oriented", "Impact-focused"],
+      "typical_day": "Explore datasets, build models, present findings, collaborate with product and engineering teams",
+      "personality_fit": {
+        "openness": 85,
+        "conscientiousness": 75,
+        "extraversion": 45,
+        "agreeableness": 55,
+        "neuroticism": 35
+      },
+      "holland_code": ["investigative", "conventional"],
+      "related_roles": ["Machine Learning Engineer", "Data Engineer", "Research Scientist", "Analytics Manager"]
+    },
+    {
+      "id": "marketing_manager",
+      "title": "Marketing Manager",
+      "category": "Business/Marketing",
+      "description": "Develops and executes marketing strategies to promote products and services",
+      "required_skills": ["Digital Marketing", "Analytics", "Communication", "Strategy"],
+      "preferred_skills": ["Content Creation", "SEO/SEM", "Social Media", "Marketing Automation"],
+      "education_requirements": ["Bachelor's in Marketing, Business, or related field", "MBA preferred for senior roles", "Relevant certifications (Google Ads, HubSpot, etc.)"],
+      "experience_levels": {
+        "entry": {
+          "title": "Marketing Coordinator",
+          "years_experience": "0-2",
+          "salary_range": {"min": 40000, "max": 55000, "currency": "USD"},
+          "responsibilities": ["Execute campaigns", "Content creation", "Social media management", "Market research"]
+        },
+        "mid": {
+          "title": "Marketing Manager",
+          "years_experience": "2-5",
+          "salary_range": {"min": 55000, "max": 80000, "currency": "USD"},
+          "responsibilities": ["Campaign strategy", "Budget management", "Team leadership", "Performance analysis"]
+        },
+        "senior": {
+          "title": "Senior Marketing Manager",
+          "years_experience": "5-8",
+          "salary_range": {"min": 80000, "max": 110000, "currency": "USD"},
+          "responsibilities": ["Strategic planning", "Cross-channel campaigns", "Stakeholder management", "Team development"]
+        },
+        "director": {
+          "title": "Marketing Director",
+          "years_experience": "8+",
+          "salary_range": {"min": 110000, "max": 150000, "currency": "USD"},
+          "responsibilities": ["Marketing strategy", "P&L responsibility", "Executive reporting", "Organizational leadership"]
+        }
+      },
+      "growth_outlook": "Good - 10% growth expected through 2030",
+      "work_environment": ["Creative and analytical", "Fast-paced", "Customer-focused", "Cross-functional collaboration"],
+      "typical_day": "Review campaign performance, collaborate with creative teams, analyze market trends, present to stakeholders",
+      "personality_fit": {
+        "openness": 70,
+        "conscientiousness": 65,
+        "extraversion": 75,
+        "agreeableness": 70,
+        "neuroticism": 45
+      },
+      "holland_code": ["enterprising", "artistic"],
+      "related_roles": ["Product Marketing Manager", "Content Marketing Manager", "Digital Marketing Specialist", "Brand Manager"]
+    },
+    {
+      "id": "teacher",
+      "title": "Teacher",
+      "category": "Education",
+      "description": "Educates students in various subjects and grade levels",
+      "required_skills": ["Subject Expertise", "Communication", "Classroom Management", "Curriculum Development"],
+      "preferred_skills": ["Educational Technology", "Differentiated Instruction", "Assessment", "Student Counseling"],
+      "education_requirements": ["Bachelor's degree in subject area", "Teaching certification/license", "Master's in Education preferred"],
+      "experience_levels": {
+        "entry": {
+          "title": "New Teacher",
+          "years_experience": "0-2",
+          "salary_range": {"min": 35000, "max": 45000, "currency": "USD"},
+          "responsibilities": ["Lesson planning", "Classroom instruction", "Student assessment", "Parent communication"]
+        },
+        "experienced": {
+          "title": "Experienced Teacher",
+          "years_experience": "3-10",
+          "salary_range": {"min": 45000, "max": 60000, "currency": "USD"},
+          "responsibilities": ["Mentor new teachers", "Curriculum development", "Committee participation", "Advanced instruction"]
+        },
+        "master": {
+          "title": "Master Teacher",
+          "years_experience": "10-20",
+          "salary_range": {"min": 60000, "max": 75000, "currency": "USD"},
+          "responsibilities": ["Instructional leadership", "Professional development", "School improvement initiatives", "Teacher evaluation"]
+        },
+        "administrator": {
+          "title": "Principal/Administrator",
+          "years_experience": "15+",
+          "salary_range": {"min": 75000, "max": 110000, "currency": "USD"},
+          "responsibilities": ["School leadership", "Budget management", "Staff supervision", "Community relations"]
+        }
+      },
+      "growth_outlook": "Average - 5% growth expected through 2030",
+      "work_environment": ["Student-centered", "Collaborative", "Structured schedule", "Community-focused"],
+      "typical_day": "Teach classes, grade assignments, meet with students individually, collaborate with colleagues",
+      "personality_fit": {
+        "openness": 65,
+        "conscientiousness": 80,
+        "extraversion": 70,
+        "agreeableness": 85,
+        "neuroticism": 40
+      },
+      "holland_code": ["social", "artistic"],
+      "related_roles": ["Principal", "Curriculum Specialist", "Educational Consultant", "Corporate Trainer"]
+    },
+    {
+      "id": "financial_analyst",
+      "title": "Financial Analyst",
+      "category": "Finance",
+      "description": "Analyzes financial data to guide business investment decisions",
+      "required_skills": ["Financial Modeling", "Excel", "Data Analysis", "Financial Reporting"],
+      "preferred_skills": ["SQL", "Python/R", "Industry Knowledge", "Presentation Skills"],
+      "education_requirements": ["Bachelor's in Finance, Economics, or related field", "CFA certification preferred", "MBA for advanced roles"],
+      "experience_levels": {
+        "entry": {
+          "title": "Financial Analyst I",
+          "years_experience": "0-2",
+          "salary_range": {"min": 55000, "max": 70000, "currency": "USD"},
+          "responsibilities": ["Financial modeling", "Data gathering", "Report preparation", "Basic analysis"]
+        },
+        "mid": {
+          "title": "Financial Analyst II",
+          "years_experience": "2-4",
+          "salary_range": {"min": 70000, "max": 90000, "currency": "USD"},
+          "responsibilities": ["Complex modeling", "Variance analysis", "Forecasting", "Stakeholder communication"]
+        },
+        "senior": {
+          "title": "Senior Financial Analyst",
+          "years_experience": "4-7",
+          "salary_range": {"min": 90000, "max": 115000, "currency": "USD"},
+          "responsibilities": ["Strategic analysis", "Process improvement", "Team leadership", "Executive reporting"]
+        },
+        "manager": {
+          "title": "Finance Manager",
+          "years_experience": "7+",
+          "salary_range": {"min": 115000, "max": 150000, "currency": "USD"},
+          "responsibilities": ["Team management", "Budget planning", "Strategic planning", "Cross-functional leadership"]
+        }
+      },
+      "growth_outlook": "Good - 6% growth expected through 2030",
+      "work_environment": ["Analytical", "Detail-oriented", "Deadline-driven", "Business-focused"],
+      "typical_day": "Build financial models, analyze performance data, prepare reports, present findings to management",
+      "personality_fit": {
+        "openness": 60,
+        "conscientiousness": 85,
+        "extraversion": 55,
+        "agreeableness": 60,
+        "neuroticism": 40
+      },
+      "holland_code": ["conventional", "investigative"],
+      "related_roles": ["Investment Analyst", "Corporate Finance", "Financial Planning & Analysis", "Investment Banking"]
+    },
+    {
+      "id": "graphic_designer",
+      "title": "Graphic Designer",
+      "category": "Creative/Design",
+      "description": "Creates visual concepts to communicate ideas and inspire audiences",
+      "required_skills": ["Design Software", "Typography", "Color Theory", "Creative Thinking"],
+      "preferred_skills": ["Web Design", "Branding", "Animation", "User Experience"],
+      "education_requirements": ["Bachelor's in Graphic Design or related field", "Strong portfolio required", "Relevant certifications (Adobe, etc.)"],
+      "experience_levels": {
+        "entry": {
+          "title": "Junior Graphic Designer",
+          "years_experience": "0-2",
+          "salary_range": {"min": 35000, "max": 45000, "currency": "USD"},
+          "responsibilities": ["Basic design work", "Following design briefs", "Learning software", "Supporting senior designers"]
+        },
+        "mid": {
+          "title": "Graphic Designer",
+          "years_experience": "2-5",
+          "salary_range": {"min": 45000, "max": 60000, "currency": "USD"},
+          "responsibilities": ["Independent projects", "Client communication", "Design concepts", "Brand guidelines"]
+        },
+        "senior": {
+          "title": "Senior Graphic Designer",
+          "years_experience": "5-8",
+          "salary_range": {"min": 60000, "max": 80000, "currency": "USD"},
+          "responsibilities": ["Lead designer on projects", "Mentor junior staff", "Creative direction", "Strategic thinking"]
+        },
+        "creative_director": {
+          "title": "Creative Director",
+          "years_experience": "8+",
+          "salary_range": {"min": 80000, "max": 120000, "currency": "USD"},
+          "responsibilities": ["Creative strategy", "Team leadership", "Client relationships", "Business development"]
+        }
+      },
+      "growth_outlook": "Average - 3% growth expected through 2030",
+      "work_environment": ["Creative", "Collaborative", "Project-based", "Technology-focused"],
+      "typical_day": "Create designs, collaborate with clients, review feedback, work on multiple projects simultaneously",
+      "personality_fit": {
+        "openness": 90,
+        "conscientiousness": 70,
+        "extraversion": 60,
+        "agreeableness": 65,
+        "neuroticism": 50
+      },
+      "holland_code": ["artistic", "enterprising"],
+      "related_roles": ["UX/UI Designer", "Art Director", "Brand Designer", "Web Designer"]
+    }
+  ],
+  "industry_sectors": [
+    {
+      "id": "technology",
+      "name": "Technology",
+      "description": "Companies focused on developing and providing technology products and services",
+      "growth_rate": 15.2,
+      "key_trends": ["Artificial Intelligence", "Cloud Computing", "Cybersecurity", "Remote Work"],
+      "top_companies": ["Google", "Microsoft", "Apple", "Amazon", "Meta"],
+      "entry_barriers": "Medium - Strong technical skills required",
+      "work_culture": "Fast-paced, innovative, collaborative",
+      "salary_premium": 25,
+      "remote_work_friendly": true
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare",
+      "description": "Medical services, pharmaceuticals, and health technology companies",
+      "growth_rate": 12.1,
+      "key_trends": ["Telemedicine", "Personalized Medicine", "Digital Health", "Aging Population"],
+      "top_companies": ["Johnson & Johnson", "UnitedHealth", "Pfizer", "CVS Health", "Anthem"],
+      "entry_barriers": "High - Extensive education and licensing required",
+      "work_culture": "Mission-driven, regulated, patient-focused",
+      "salary_premium": 15,
+      "remote_work_friendly": false
+    },
+    {
+      "id": "finance",
+      "name": "Financial Services",
+      "description": "Banking, investment, insurance, and financial technology companies",
+      "growth_rate": 6.8,
+      "key_trends": ["FinTech", "Cryptocurrency", "Digital Banking", "ESG Investing"],
+      "top_companies": ["JPMorgan Chase", "Bank of America", "Wells Fargo", "Goldman Sachs", "Morgan Stanley"],
+      "entry_barriers": "Medium-High - Strong analytical skills and often requires certifications",
+      "work_culture": "Performance-driven, analytical, competitive",
+      "salary_premium": 20,
+      "remote_work_friendly": true
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "description": "Schools, universities, and educational services organizations",
+      "growth_rate": 3.2,
+      "key_trends": ["Online Learning", "Educational Technology", "Personalized Learning", "Skills-Based Education"],
+      "top_companies": ["Pearson", "McGraw Hill", "Coursera", "Khan Academy", "Blackboard"],
+      "entry_barriers": "Medium - Teaching credentials and subject expertise required",
+      "work_culture": "Mission-driven, collaborative, structured",
+      "salary_premium": -15,
+      "remote_work_friendly": true
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing",
+      "description": "Production of physical goods across various industries",
+      "growth_rate": 1.1,
+      "key_trends": ["Automation", "Industry 4.0", "Sustainability", "Supply Chain Optimization"],
+      "top_companies": ["General Electric", "3M", "Boeing", "Caterpillar", "Ford"],
+      "entry_barriers": "Low-Medium - Varies by role from assembly to engineering",
+      "work_culture": "Safety-focused, process-oriented, team-based",
+      "salary_premium": 5,
+      "remote_work_friendly": false
+    }
+  ],
+  "career_transitions": [
+    {
+      "from": "teacher",
+      "to": "corporate_trainer",
+      "difficulty": "Easy",
+      "timeline_months": 6,
+      "required_skills": ["Training Design", "Adult Learning Principles", "Business Acumen"],
+      "transferable_skills": ["Communication", "Curriculum Development", "Presentation", "Assessment"],
+      "salary_change": 25,
+      "success_rate": 85
+    },
+    {
+      "from": "financial_analyst",
+      "to": "data_scientist",
+      "difficulty": "Medium",
+      "timeline_months": 12,
+      "required_skills": ["Python/R", "Machine Learning", "Statistics", "Data Visualization"],
+      "transferable_skills": ["Excel", "Data Analysis", "Modeling", "Problem Solving"],
+      "salary_change": 15,
+      "success_rate": 65
+    },
+    {
+      "from": "marketing_manager",
+      "to": "product_manager",
+      "difficulty": "Medium",
+      "timeline_months": 9,
+      "required_skills": ["Product Strategy", "Technical Understanding", "User Experience", "Agile Methodologies"],
+      "transferable_skills": ["Strategy", "Communication", "Analytics", "Customer Focus"],
+      "salary_change": 10,
+      "success_rate": 70
+    },
+    {
+      "from": "software_engineer",
+      "to": "data_engineer",
+      "difficulty": "Easy",
+      "timeline_months": 6,
+      "required_skills": ["ETL Processes", "Data Warehousing", "Big Data Technologies", "SQL"],
+      "transferable_skills": ["Programming", "System Design", "Problem Solving", "Technical Skills"],
+      "salary_change": 5,
+      "success_rate": 90
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "skill_categories": [
+    {
+      "id": "technical",
+      "name": "Technical Skills",
+      "description": "Hard skills related to specific tools, technologies, and methodologies",
+      "subcategories": [
+        {
+          "id": "programming",
+          "name": "Programming Languages",
+          "skills": [
+            {
+              "id": "python",
+              "name": "Python",
+              "description": "High-level programming language popular for data science, web development, and automation",
+              "demand_score": 95,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 6,
+              "related_skills": ["Data Science", "Machine Learning", "Web Development", "Automation"],
+              "career_paths": ["Data Scientist", "Software Engineer", "DevOps Engineer", "Machine Learning Engineer"],
+              "certifications": ["Python Institute PCAP", "Microsoft Python Certification"],
+              "salary_premium": 15,
+              "market_trends": {
+                "growth_rate": 25.3,
+                "saturation_level": 0.4,
+                "future_outlook": "Very Strong"
+              }
+            },
+            {
+              "id": "javascript",
+              "name": "JavaScript",
+              "description": "Programming language essential for web development, both frontend and backend",
+              "demand_score": 92,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 8,
+              "related_skills": ["Web Development", "React", "Node.js", "HTML/CSS"],
+              "career_paths": ["Frontend Developer", "Full Stack Developer", "Web Developer"],
+              "certifications": ["JavaScript Institute Certification", "Various framework certifications"],
+              "salary_premium": 12,
+              "market_trends": {
+                "growth_rate": 18.7,
+                "saturation_level": 0.6,
+                "future_outlook": "Strong"
+              }
+            },
+            {
+              "id": "java",
+              "name": "Java",
+              "description": "Object-oriented programming language widely used in enterprise applications",
+              "demand_score": 88,
+              "learning_difficulty": "Medium-Hard",
+              "time_to_proficiency_months": 10,
+              "related_skills": ["Spring Framework", "Android Development", "Enterprise Development"],
+              "career_paths": ["Software Engineer", "Backend Developer", "Enterprise Developer"],
+              "certifications": ["Oracle Java Certification", "Spring Professional Certification"],
+              "salary_premium": 10,
+              "market_trends": {
+                "growth_rate": 8.2,
+                "saturation_level": 0.7,
+                "future_outlook": "Stable"
+              }
+            },
+            {
+              "id": "sql",
+              "name": "SQL",
+              "description": "Standard language for managing and querying relational databases",
+              "demand_score": 90,
+              "learning_difficulty": "Easy-Medium",
+              "time_to_proficiency_months": 3,
+              "related_skills": ["Database Design", "Data Analysis", "Business Intelligence"],
+              "career_paths": ["Data Analyst", "Database Administrator", "Business Analyst"],
+              "certifications": ["Microsoft SQL Server Certification", "Oracle Database Certification"],
+              "salary_premium": 8,
+              "market_trends": {
+                "growth_rate": 12.4,
+                "saturation_level": 0.5,
+                "future_outlook": "Strong"
+              }
+            }
+          ]
+        },
+        {
+          "id": "data_science",
+          "name": "Data Science & Analytics",
+          "skills": [
+            {
+              "id": "machine_learning",
+              "name": "Machine Learning",
+              "description": "Algorithms and statistical models that enable computers to learn from data",
+              "demand_score": 96,
+              "learning_difficulty": "Hard",
+              "time_to_proficiency_months": 12,
+              "related_skills": ["Python", "Statistics", "Data Analysis", "Deep Learning"],
+              "career_paths": ["Data Scientist", "Machine Learning Engineer", "AI Researcher"],
+              "certifications": ["Google ML Engineer", "AWS ML Specialty", "Coursera ML Specialization"],
+              "salary_premium": 25,
+              "market_trends": {
+                "growth_rate": 45.2,
+                "saturation_level": 0.2,
+                "future_outlook": "Excellent"
+              }
+            },
+            {
+              "id": "data_visualization",
+              "name": "Data Visualization",
+              "description": "Creating visual representations of data to communicate insights effectively",
+              "demand_score": 85,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 4,
+              "related_skills": ["Tableau", "Power BI", "Python", "Design Principles"],
+              "career_paths": ["Data Analyst", "Business Analyst", "Data Scientist"],
+              "certifications": ["Tableau Desktop Specialist", "Microsoft Power BI Certification"],
+              "salary_premium": 10,
+              "market_trends": {
+                "growth_rate": 22.1,
+                "saturation_level": 0.4,
+                "future_outlook": "Strong"
+              }
+            },
+            {
+              "id": "statistics",
+              "name": "Statistics",
+              "description": "Mathematical methods for collecting, analyzing, and interpreting data",
+              "demand_score": 82,
+              "learning_difficulty": "Hard",
+              "time_to_proficiency_months": 18,
+              "related_skills": ["R", "Python", "Hypothesis Testing", "Experimental Design"],
+              "career_paths": ["Data Scientist", "Statistician", "Research Analyst"],
+              "certifications": ["ASA Accredited Statistician", "SAS Statistical Certification"],
+              "salary_premium": 15,
+              "market_trends": {
+                "growth_rate": 18.3,
+                "saturation_level": 0.3,
+                "future_outlook": "Strong"
+              }
+            }
+          ]
+        },
+        {
+          "id": "cloud_computing",
+          "name": "Cloud Computing",
+          "skills": [
+            {
+              "id": "aws",
+              "name": "Amazon Web Services (AWS)",
+              "description": "Cloud computing platform offering various infrastructure and platform services",
+              "demand_score": 93,
+              "learning_difficulty": "Medium-Hard",
+              "time_to_proficiency_months": 8,
+              "related_skills": ["DevOps", "System Administration", "Security"],
+              "career_paths": ["Cloud Engineer", "DevOps Engineer", "Solutions Architect"],
+              "certifications": ["AWS Solutions Architect", "AWS DevOps Engineer", "AWS Security Specialty"],
+              "salary_premium": 20,
+              "market_trends": {
+                "growth_rate": 35.8,
+                "saturation_level": 0.3,
+                "future_outlook": "Excellent"
+              }
+            },
+            {
+              "id": "azure",
+              "name": "Microsoft Azure",
+              "description": "Microsoft's cloud computing platform and services",
+              "demand_score": 89,
+              "learning_difficulty": "Medium-Hard",
+              "time_to_proficiency_months": 8,
+              "related_skills": ["Windows Server", "PowerShell", ".NET"],
+              "career_paths": ["Cloud Engineer", "System Administrator", "DevOps Engineer"],
+              "certifications": ["Azure Fundamentals", "Azure Solutions Architect", "Azure DevOps Engineer"],
+              "salary_premium": 18,
+              "market_trends": {
+                "growth_rate": 32.4,
+                "saturation_level": 0.35,
+                "future_outlook": "Excellent"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soft_skills",
+      "name": "Soft Skills",
+      "description": "Interpersonal and personal attributes that enable effective work relationships",
+      "subcategories": [
+        {
+          "id": "communication",
+          "name": "Communication Skills",
+          "skills": [
+            {
+              "id": "verbal_communication",
+              "name": "Verbal Communication",
+              "description": "Ability to convey information clearly and effectively through speech",
+              "demand_score": 98,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 12,
+              "related_skills": ["Presentation", "Public Speaking", "Active Listening"],
+              "career_paths": ["Manager", "Sales", "Teacher", "Consultant"],
+              "certifications": ["Toastmasters Competent Communicator", "Dale Carnegie Certification"],
+              "salary_premium": 12,
+              "market_trends": {
+                "growth_rate": 12.1,
+                "saturation_level": 0.8,
+                "future_outlook": "Stable"
+              }
+            },
+            {
+              "id": "written_communication",
+              "name": "Written Communication",
+              "description": "Ability to express ideas clearly and professionally in writing",
+              "demand_score": 95,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 6,
+              "related_skills": ["Documentation", "Technical Writing", "Content Creation"],
+              "career_paths": ["Technical Writer", "Marketing", "Project Manager"],
+              "certifications": ["Technical Writing Certification", "Content Marketing Certification"],
+              "salary_premium": 8,
+              "market_trends": {
+                "growth_rate": 10.3,
+                "saturation_level": 0.7,
+                "future_outlook": "Stable"
+              }
+            },
+            {
+              "id": "presentation_skills",
+              "name": "Presentation Skills",
+              "description": "Ability to present information engagingly and persuasively to audiences",
+              "demand_score": 88,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 8,
+              "related_skills": ["Public Speaking", "Visual Design", "Storytelling"],
+              "career_paths": ["Sales", "Consulting", "Training", "Leadership"],
+              "certifications": ["Advanced Presentation Skills", "PowerPoint Specialist"],
+              "salary_premium": 10,
+              "market_trends": {
+                "growth_rate": 15.2,
+                "saturation_level": 0.6,
+                "future_outlook": "Strong"
+              }
+            }
+          ]
+        },
+        {
+          "id": "leadership",
+          "name": "Leadership Skills",
+          "skills": [
+            {
+              "id": "team_leadership",
+              "name": "Team Leadership",
+              "description": "Ability to guide, motivate, and manage teams effectively",
+              "demand_score": 92,
+              "learning_difficulty": "Hard",
+              "time_to_proficiency_months": 24,
+              "related_skills": ["Emotional Intelligence", "Conflict Resolution", "Decision Making"],
+              "career_paths": ["Manager", "Director", "Team Lead", "Entrepreneur"],
+              "certifications": ["Leadership Development Program", "PMP Certification"],
+              "salary_premium": 20,
+              "market_trends": {
+                "growth_rate": 8.9,
+                "saturation_level": 0.7,
+                "future_outlook": "Stable"
+              }
+            },
+            {
+              "id": "project_management",
+              "name": "Project Management",
+              "description": "Planning, executing, and closing projects successfully within constraints",
+              "demand_score": 89,
+              "learning_difficulty": "Medium-Hard",
+              "time_to_proficiency_months": 10,
+              "related_skills": ["Agile", "Scrum", "Risk Management", "Stakeholder Management"],
+              "career_paths": ["Project Manager", "Program Manager", "Scrum Master"],
+              "certifications": ["PMP", "Agile Certified Practitioner", "Scrum Master"],
+              "salary_premium": 15,
+              "market_trends": {
+                "growth_rate": 11.2,
+                "saturation_level": 0.6,
+                "future_outlook": "Strong"
+              }
+            },
+            {
+              "id": "emotional_intelligence",
+              "name": "Emotional Intelligence",
+              "description": "Ability to understand and manage emotions in self and others",
+              "demand_score": 85,
+              "learning_difficulty": "Hard",
+              "time_to_proficiency_months": 18,
+              "related_skills": ["Empathy", "Self-Awareness", "Social Skills"],
+              "career_paths": ["Manager", "HR", "Sales", "Healthcare"],
+              "certifications": ["EQ-i 2.0 Certification", "Emotional Intelligence Certification"],
+              "salary_premium": 12,
+              "market_trends": {
+                "growth_rate": 16.7,
+                "saturation_level": 0.4,
+                "future_outlook": "Strong"
+              }
+            }
+          ]
+        },
+        {
+          "id": "problem_solving",
+          "name": "Problem Solving",
+          "skills": [
+            {
+              "id": "critical_thinking",
+              "name": "Critical Thinking",
+              "description": "Ability to analyze situations objectively and make reasoned judgments",
+              "demand_score": 90,
+              "learning_difficulty": "Medium-Hard",
+              "time_to_proficiency_months": 15,
+              "related_skills": ["Analysis", "Logic", "Research", "Decision Making"],
+              "career_paths": ["Analyst", "Consultant", "Researcher", "Manager"],
+              "certifications": ["Critical Thinking Certification", "Problem Solving Certification"],
+              "salary_premium": 10,
+              "market_trends": {
+                "growth_rate": 15.6,
+                "saturation_level": 0.5,
+                "future_outlook": "Strong"
+              }
+            },
+            {
+              "id": "analytical_thinking",
+              "name": "Analytical Thinking",
+              "description": "Ability to break down complex problems into manageable components",
+              "demand_score": 87,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 12,
+              "related_skills": ["Data Analysis", "Logic", "Pattern Recognition"],
+              "career_paths": ["Business Analyst", "Data Analyst", "Consultant"],
+              "certifications": ["Business Analysis Certification", "Six Sigma"],
+              "salary_premium": 12,
+              "market_trends": {
+                "growth_rate": 13.8,
+                "saturation_level": 0.6,
+                "future_outlook": "Strong"
+              }
+            }
+          ]
+        },
+        {
+          "id": "adaptability",
+          "name": "Adaptability & Learning",
+          "skills": [
+            {
+              "id": "adaptability",
+              "name": "Adaptability",
+              "description": "Ability to adjust to new conditions and embrace change effectively",
+              "demand_score": 94,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 12,
+              "related_skills": ["Flexibility", "Resilience", "Growth Mindset"],
+              "career_paths": ["Any role in changing industries", "Startup roles", "Consulting"],
+              "certifications": ["Change Management Certification", "Agile Mindset Certification"],
+              "salary_premium": 8,
+              "market_trends": {
+                "growth_rate": 22.3,
+                "saturation_level": 0.4,
+                "future_outlook": "Excellent"
+              }
+            },
+            {
+              "id": "continuous_learning",
+              "name": "Continuous Learning",
+              "description": "Commitment to ongoing skill development and knowledge acquisition",
+              "demand_score": 91,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 6,
+              "related_skills": ["Self-Directed Learning", "Research", "Curiosity"],
+              "career_paths": ["Technology roles", "Research", "Consulting"],
+              "certifications": ["Learning and Development Certification", "Various micro-credentials"],
+              "salary_premium": 10,
+              "market_trends": {
+                "growth_rate": 19.4,
+                "saturation_level": 0.3,
+                "future_outlook": "Excellent"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business_skills",
+      "name": "Business Skills",
+      "description": "Skills related to business operations, strategy, and commercial activities",
+      "subcategories": [
+        {
+          "id": "marketing",
+          "name": "Marketing & Sales",
+          "skills": [
+            {
+              "id": "digital_marketing",
+              "name": "Digital Marketing",
+              "description": "Promoting products/services through digital channels and platforms",
+              "demand_score": 89,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 6,
+              "related_skills": ["SEO", "Social Media", "Analytics", "Content Marketing"],
+              "career_paths": ["Marketing Manager", "Digital Marketing Specialist", "Growth Hacker"],
+              "certifications": ["Google Ads", "HubSpot", "Facebook Blueprint"],
+              "salary_premium": 12,
+              "market_trends": {
+                "growth_rate": 18.7,
+                "saturation_level": 0.6,
+                "future_outlook": "Strong"
+              }
+            },
+            {
+              "id": "content_marketing",
+              "name": "Content Marketing",
+              "description": "Creating and distributing valuable content to attract and engage audiences",
+              "demand_score": 84,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 8,
+              "related_skills": ["Writing", "SEO", "Analytics", "Strategy"],
+              "career_paths": ["Content Marketing Manager", "Content Strategist", "Brand Manager"],
+              "certifications": ["Content Marketing Institute", "HubSpot Content Marketing"],
+              "salary_premium": 8,
+              "market_trends": {
+                "growth_rate": 16.2,
+                "saturation_level": 0.5,
+                "future_outlook": "Strong"
+              }
+            },
+            {
+              "id": "sales",
+              "name": "Sales",
+              "description": "Process of selling products or services to customers",
+              "demand_score": 86,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 12,
+              "related_skills": ["Negotiation", "Communication", "Relationship Building"],
+              "career_paths": ["Sales Representative", "Account Manager", "Sales Manager"],
+              "certifications": ["Salesforce Certification", "Challenger Sale Methodology"],
+              "salary_premium": 15,
+              "market_trends": {
+                "growth_rate": 9.3,
+                "saturation_level": 0.7,
+                "future_outlook": "Stable"
+              }
+            }
+          ]
+        },
+        {
+          "id": "finance",
+          "name": "Finance & Accounting",
+          "skills": [
+            {
+              "id": "financial_analysis",
+              "name": "Financial Analysis",
+              "description": "Evaluating financial data to make business decisions and recommendations",
+              "demand_score": 85,
+              "learning_difficulty": "Medium-Hard",
+              "time_to_proficiency_months": 10,
+              "related_skills": ["Excel", "Financial Modeling", "Accounting", "Statistics"],
+              "career_paths": ["Financial Analyst", "Investment Analyst", "Corporate Finance"],
+              "certifications": ["CFA", "Financial Modeling Certification"],
+              "salary_premium": 18,
+              "market_trends": {
+                "growth_rate": 11.4,
+                "saturation_level": 0.6,
+                "future_outlook": "Strong"
+              }
+            },
+            {
+              "id": "accounting",
+              "name": "Accounting",
+              "description": "Recording, measuring, and communicating financial information",
+              "demand_score": 82,
+              "learning_difficulty": "Medium",
+              "time_to_proficiency_months": 12,
+              "related_skills": ["Excel", "Financial Software", "Tax Preparation"],
+              "career_paths": ["Accountant", "Financial Analyst", "Controller"],
+              "certifications": ["CPA", "CMA", "QuickBooks Certification"],
+              "salary_premium": 10,
+              "market_trends": {
+                "growth_rate": 6.2,
+                "saturation_level": 0.8,
+                "future_outlook": "Stable"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "skill_relationships": [
+    {
+      "primary_skill": "python",
+      "complementary_skills": ["machine_learning", "data_visualization", "sql", "statistics"],
+      "alternative_skills": ["r", "java", "scala"],
+      "prerequisite_skills": ["programming_fundamentals", "mathematics"],
+      "career_synergy_score": 9.2
+    },
+    {
+      "primary_skill": "machine_learning",
+      "complementary_skills": ["python", "statistics", "data_visualization", "mathematics"],
+      "alternative_skills": ["deep_learning", "ai_research"],
+      "prerequisite_skills": ["programming", "statistics", "linear_algebra"],
+      "career_synergy_score": 9.5
+    },
+    {
+      "primary_skill": "project_management",
+      "complementary_skills": ["communication", "leadership", "analytical_thinking"],
+      "alternative_skills": ["product_management", "program_management"],
+      "prerequisite_skills": ["organization", "time_management"],
+      "career_synergy_score": 8.7
+    }
+  ],
+  "learning_paths": [
+    {
+      "id": "data_science_beginner",
+      "name": "Data Science for Beginners",
+      "target_role": "Data Scientist",
+      "duration_months": 12,
+      "difficulty": "Medium-Hard",
+      "prerequisites": ["Basic Mathematics", "Programming Interest"],
+      "modules": [
+        {
+          "module": 1,
+          "name": "Python Fundamentals",
+          "duration_weeks": 6,
+          "skills": ["python", "programming_fundamentals"],
+          "resources": ["Python for Everybody Course", "Automate the Boring Stuff"]
+        },
+        {
+          "module": 2,
+          "name": "Statistics & Mathematics",
+          "duration_weeks": 8,
+          "skills": ["statistics", "linear_algebra", "calculus"],
+          "resources": ["Khan Academy Statistics", "Statistics Course"]
+        },
+        {
+          "module": 3,
+          "name": "Data Manipulation & Analysis",
+          "duration_weeks": 6,
+          "skills": ["pandas", "numpy", "data_cleaning"],
+          "resources": ["Python for Data Analysis", "Pandas Documentation"]
+        },
+        {
+          "module": 4,
+          "name": "Data Visualization",
+          "duration_weeks": 4,
+          "skills": ["matplotlib", "seaborn", "plotly"],
+          "resources": ["Data Visualization Course", "Matplotlib Tutorials"]
+        },
+        {
+          "module": 5,
+          "name": "Machine Learning",
+          "duration_weeks": 12,
+          "skills": ["scikit_learn", "machine_learning", "model_evaluation"],
+          "resources": ["Andrew Ng ML Course", "Hands-On Machine Learning"]
+        },
+        {
+          "module": 6,
+          "name": "Advanced Topics",
+          "duration_weeks": 8,
+          "skills": ["deep_learning", "nlp", "computer_vision"],
+          "resources": ["Deep Learning Specialization", "Advanced ML Courses"]
+        },
+        {
+          "module": 7,
+          "name": "Projects & Portfolio",
+          "duration_weeks": 8,
+          "skills": ["portfolio_development", "github", "communication"],
+          "resources": ["Kaggle Competitions", "Personal Projects"]
+        }
+      ],
+      "career_outcomes": {
+        "entry_level_roles": ["Junior Data Scientist", "Data Analyst"],
+        "average_salary_increase": 45,
+        "job_market_demand": "Very High"
+      }
+    },
+    {
+      "id": "web_development_fullstack",
+      "name": "Full Stack Web Development",
+      "target_role": "Full Stack Developer",
+      "duration_months": 9,
+      "difficulty": "Medium",
+      "prerequisites": ["Basic Computer Skills", "Problem-Solving Interest"],
+      "modules": [
+        {
+          "module": 1,
+          "name": "HTML, CSS & JavaScript Basics",
+          "duration_weeks": 8,
+          "skills": ["html", "css", "javascript"],
+          "resources": ["FreeCodeCamp", "Mozilla Developer Network"]
+        },
+        {
+          "module": 2,
+          "name": "Frontend Framework",
+          "duration_weeks": 6,
+          "skills": ["react", "component_architecture", "state_management"],
+          "resources": ["React Documentation", "Modern React Course"]
+        },
+        {
+          "module": 3,
+          "name": "Backend Development",
+          "duration_weeks": 8,
+          "skills": ["nodejs", "express", "rest_apis", "databases"],
+          "resources": ["Node.js Course", "Express.js Documentation"]
+        },
+        {
+          "module": 4,
+          "name": "Database Management",
+          "duration_weeks": 4,
+          "skills": ["sql", "mongodb", "database_design"],
+          "resources": ["Database Design Course", "SQL Tutorial"]
+        },
+        {
+          "module": 5,
+          "name": "Development Tools",
+          "duration_weeks": 3,
+          "skills": ["git", "webpack", "deployment", "testing"],
+          "resources": ["Git Tutorial", "Deployment Guides"]
+        },
+        {
+          "module": 6,
+          "name": "Projects & Portfolio",
+          "duration_weeks": 10,
+          "skills": ["portfolio_development", "full_stack_projects"],
+          "resources": ["Build Real Projects", "Portfolio Examples"]
+        }
+      ],
+      "career_outcomes": {
+        "entry_level_roles": ["Junior Full Stack Developer", "Web Developer"],
+        "average_salary_increase": 35,
+        "job_market_demand": "High"
+      }
+    }
+  ]
+}

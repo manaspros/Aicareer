@@ -1,0 +1,91 @@
+# Core Framework
+fastapi>=0.104.1,<1.0.0
+uvicorn[standard]>=0.24.0,<1.0.0
+pydantic>=2.5.0,<3.0.0
+pydantic-settings>=2.1.0,<3.0.0
+
+# LangChain and AI
+langchain>=0.1.0,<1.0.0
+langchain-google-genai>=0.0.6,<1.0.0
+langchain-community>=0.0.10,<1.0.0
+google-generativeai>=0.3.2,<1.0.0
+
+# Database
+sqlalchemy[asyncio]>=2.0.23,<3.0.0
+aiosqlite>=0.19.0,<1.0.0
+asyncpg>=0.29.0,<1.0.0  # For PostgreSQL support
+alembic>=1.13.1,<2.0.0  # For database migrations
+
+# Vector Database
+chromadb>=0.4.18,<1.0.0
+sentence-transformers>=2.2.2,<3.0.0
+
+# HTTP and API
+aiohttp>=3.9.1,<4.0.0
+httpx>=0.25.2,<1.0.0
+requests>=2.31.0,<3.0.0
+
+# Data Processing and Analysis
+pandas>=2.1.4,<3.0.0
+numpy>=1.26.0,<2.0.0
+scipy>=1.11.4,<2.0.0
+scikit-learn>=1.3.2,<2.0.0
+
+# Visualization (for data analysis)
+matplotlib>=3.8.2,<4.0.0
+seaborn>=0.13.0,<1.0.0
+plotly>=5.17.0,<6.0.0
+
+# Async and Concurrency
+asyncio-mqtt>=0.13.0,<1.0.0  # If MQTT integration needed
+aiofiles>=23.2.1,<24.0.0
+
+# Environment and Configuration
+python-dotenv>=1.0.0,<2.0.0
+python-multipart>=0.0.6,<1.0.0  # For file uploads
+
+# Logging and Monitoring
+structlog>=23.2.0,<24.0.0
+python-json-logger>=2.0.7,<3.0.0
+
+# Testing
+pytest>=7.4.3,<8.0.0
+pytest-asyncio>=0.21.1,<1.0.0
+pytest-mock>=3.12.0,<4.0.0
+
+# Development Tools
+black>=23.11.0,<25.0.0  # Code formatting
+isort>=5.13.2,<6.0.0   # Import sorting
+flake8>=6.1.0,<7.0.0   # Linting
+mypy>=1.7.1,<2.0.0     # Type checking
+
+# Additional Utilities
+python-slugify>=8.0.1,<9.0.0
+email-validator>=2.1.0,<3.0.0
+bcrypt>=4.1.2,<5.0.0  # For password hashing if needed
+python-jose[cryptography]>=3.3.0,<4.0.0  # For JWT tokens
+passlib[bcrypt]>=1.7.4,<2.0.0  # Password utilities
+
+# CORS and Security (Note: python-cors doesn't exist, should be handled by FastAPI)
+# python-cors==1.7.0  # Removed - FastAPI handles CORS natively
+
+# Optional: For production deployment
+gunicorn>=21.2.0,<22.0.0
+prometheus-client>=0.19.0,<1.0.0  # For metrics
+
+# Optional: For caching
+redis>=5.0.1,<6.0.0
+aioredis>=2.0.1,<3.0.0
+
+# Optional: For job scheduling
+celery>=5.3.4,<6.0.0
+flower>=2.0.1,<3.0.0  # Celery monitoring
+
+# Optional: For advanced NLP
+spacy>=3.7.2,<4.0.0
+transformers>=4.36.0,<5.0.0
+torch>=2.1.2,<3.0.0  # If using PyTorch models
+
+# Development and Documentation
+sphinx>=7.2.6,<8.0.0  # For documentation
+sphinx-rtd-theme>=1.3.0,<2.0.0
