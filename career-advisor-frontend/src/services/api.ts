@@ -111,9 +111,9 @@ export class ApiService {
   // Questionnaire Management
   static async generateQuestionnaire(userId: string) {
     try {
-      // Use longer timeout for AI questionnaire generation (30 seconds)
+      // Use longer timeout for AI questionnaire generation (70 seconds)
       const response = await api.get(`/api/questionnaire/generate/${userId}`, {
-        timeout: 30000
+        timeout: 70000
       });
       return response.data;
     } catch (error) {
@@ -123,12 +123,20 @@ export class ApiService {
   }
 
   static async submitQuestionnaire(userId: string, submission: any) {
-    const response = await api.post(`/api/questionnaire/submit/${userId}`, submission);
+    // Use longer timeout for AI analysis of questionnaire responses (60 seconds)
+    const response = await api.post(`/api/questionnaire/submit/${userId}`, submission, {
+      timeout: 60000
+    });
     return response.data;
   }
 
   static async getQuestionnaireStatus(userId: string) {
     const response = await api.get(`/api/questionnaire/status/${userId}`);
+    return response.data;
+  }
+
+  static async resetUserData(userId: string) {
+    const response = await api.post(`/api/users/${userId}/reset`);
     return response.data;
   }
 
@@ -281,12 +289,18 @@ export class ApiService {
   }
 
   static async getSkillDemandAnalysis(skills: string) {
-    const response = await api.get(`/api/analytics/skill-demand?skills=${encodeURIComponent(skills)}`);
+    // Use longer timeout for AI-powered skill analysis
+    const response = await api.get(`/api/analytics/skill-demand?skills=${encodeURIComponent(skills)}`, {
+      timeout: 90000 // 90 seconds
+    });
     return response.data;
   }
 
   static async getMarketPredictions(industry: string, analysisType = 'disruption') {
-    const response = await api.get(`/api/analytics/market-predictions?industry=${industry}&analysis_type=${analysisType}`);
+    // Use longer timeout for AI-powered market predictions
+    const response = await api.get(`/api/analytics/market-predictions?industry=${industry}&analysis_type=${analysisType}`, {
+      timeout: 90000 // 90 seconds
+    });
     return response.data;
   }
 

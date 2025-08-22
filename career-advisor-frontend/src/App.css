@@ -1853,6 +1853,255 @@ body {
   }
 }
 
+/* Enhanced Analytics Styles */
+.confidence {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.overall-outlook {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.outlook-rating {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.outlook-rating.very-positive {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.outlook-rating.positive {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+.outlook-rating.neutral {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.outlook-rating.negative {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.recommendations h5 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+.recommendations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recommendations li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.recommendations li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.disruption-overview {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.disruption-level {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.disruption-level.low {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.disruption-level.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.disruption-level.high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.timeline {
+  font-weight: 600;
+  color: #4f46e5;
+  margin-top: 0.5rem;
+}
+
+.disruption-factors, .implications, .strategies {
+  margin-bottom: 1.5rem;
+}
+
+.disruption-factors h4, .implications h4, .strategies h4 {
+  margin-bottom: 1rem;
+  color: #374151;
+  font-size: 1.1rem;
+}
+
+.disruptor-name {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.implication-item, .strategy-item {
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background: #f9fafb;
+  border-left: 3px solid #667eea;
+  border-radius: 0 6px 6px 0;
+}
+
+.implication-item p, .strategy-item p {
+  margin: 0;
+  color: #374151;
+}
+
+/* Skill Gap Analysis Styles */
+.skill-gap-results {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.skill-gap-results h3 {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.assessment-stage {
+  background: #f0f9ff;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 4px solid #0ea5e9;
+}
+
+.assessment-prompt h4 {
+  color: #0f172a;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.assessment-prompt ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.assessment-prompt li {
+  margin: 0.5rem 0;
+  color: #475569;
+}
+
+.skill-gaps {
+  margin-bottom: 1.5rem;
+}
+
+.skill-gaps h4 {
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.gaps-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.gap-item {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 4px solid #f59e0b;
+}
+
+.gap-skill {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.gap-level {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.gap-priority {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.gap-priority {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.skill-recommendations {
+  background: #f0fdf4;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 4px solid #22c55e;
+}
+
+.skill-recommendations h4 {
+  color: #166534;
+  margin-bottom: 0.5rem;
+}
+
+.skill-recommendations ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.skill-recommendations li {
+  margin: 0.5rem 0;
+  color: #15803d;
+}
+
 /* Questionnaire Styles */
 .questionnaire-container {
   max-width: 800px;
@@ -2324,4 +2573,245 @@ body {
   margin-top: 8px !important;
   max-width: 400px;
   line-height: 1.4;
+}
+
+/* Settings Page Styles */
+.settings-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.settings-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.settings-header h2 {
+  color: #1e293b;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.settings-header p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.settings-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section h3 {
+  color: #1e293b;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.settings-item-info h4 {
+  color: #374151;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.settings-item-info p {
+  color: #6b7280;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.reset-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.reset-button:hover:not(:disabled) {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.reset-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.status-message.success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.status-message.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+/* Modal and Confirmation Dialog */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-dialog {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.warning-icon {
+  color: #f59e0b;
+}
+
+.dialog-header h3 {
+  color: #1f2937;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.dialog-content {
+  padding: 1.5rem 2rem;
+}
+
+.dialog-content p {
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.dialog-content ul {
+  color: #6b7280;
+  margin-left: 1rem;
+}
+
+.dialog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.cancel-button {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  background: #e5e7eb;
+}
+
+.confirm-reset-button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.confirm-reset-button:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.confirm-reset-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 1rem;
+  }
+  
+  .settings-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .reset-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .dialog-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .confirm-reset-button {
+    width: 100%;
+  }
 }

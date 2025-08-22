@@ -57,8 +57,16 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser, onLogout }) => {
             to="/profile" 
             className={`nav-link ${isActive('/profile') ? 'active' : ''}`}
           >
-            <Settings size={20} />
+            <User size={20} />
             Profile
+          </Link>
+
+          <Link 
+            to="/settings" 
+            className={`nav-link ${isActive('/settings') ? 'active' : ''}`}
+          >
+            <Settings size={20} />
+            Settings
           </Link>
         </div>
       )}
@@ -66,8 +74,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser, onLogout }) => {
       <div className="navbar-user">
         {currentUser && (
           <div className="user-menu">
-            <User size={20} />
-            <span className="user-id">Demo Mode</span>
+            <span className="user-id">Welcome!</span>
+            <button onClick={onLogout} className="logout-btn">
+              <LogOut size={16} />
+            </button>
           </div>
         )}
       </div>

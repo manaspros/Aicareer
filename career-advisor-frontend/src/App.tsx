@@ -9,7 +9,7 @@ import UserProfile from './components/UserProfile';
 import CareerAnalysis from './components/CareerAnalysis';
 import AIChat from './components/AIChat';
 import Analytics from './components/Analytics';
-import Login from './components/Login';
+import Settings from './components/Settings';
 
 // Services
 import ApiService from './services/api';
@@ -19,22 +19,24 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is already logged in from localStorage
-    const savedUserId = localStorage.getItem('currentUserId');
-    if (savedUserId) {
-      setCurrentUser(savedUserId);
+    // Auto-generate or get existing user ID
+    let savedUserId = localStorage.getItem('currentUserId');
+    if (!savedUserId) {
+      // Generate a unique user ID
+      savedUserId = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      localStorage.setItem('currentUserId', savedUserId);
     }
+    setCurrentUser(savedUserId);
     setIsLoading(false);
   }, []);
-
-  const handleUserLogin = (userId: string) => {
-    setCurrentUser(userId);
-    localStorage.setItem('currentUserId', userId);
-  };
 
   const handleUserLogout = () => {
     setCurrentUser(null);
     localStorage.removeItem('currentUserId');
+    // Generate new user ID on logout
+    const newUserId = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    localStorage.setItem('currentUserId', newUserId);
+    setCurrentUser(newUserId);
   };
 
   if (isLoading) {
@@ -44,11 +46,6 @@ function App() {
         <p>Loading...</p>
       </div>
     );
-  }
-
-  // Show login screen if no user is authenticated
-  if (!currentUser) {
-    return <Login onLogin={handleUserLogin} />;
   }
 
   // Show main app if user is authenticated
@@ -82,6 +79,11 @@ function App() {
             <Route 
               path="/analytics" 
               element={<Analytics />} 
+            />
+
+            <Route 
+              path="/settings" 
+              element={<Settings userId={currentUser} />} 
             />
             
             <Route 

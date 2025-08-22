@@ -180,6 +180,74 @@ const CareerAnalysis: React.FC<CareerAnalysisProps> = ({ userId }) => {
     );
   };
 
+  const renderSkillGapResults = (results: any) => {
+    const assessmentStage = results.assessment_stage;
+    
+    if (assessmentStage === 'skill_questions') {
+      return (
+        <div className="skill-gap-results">
+          <h3>Skill Assessment</h3>
+          <div className="assessment-stage">
+            <p>Ready to begin your skill assessment! Please provide information about your current skills and experience level.</p>
+            <div className="assessment-prompt">
+              <h4>Next Steps:</h4>
+              <ol>
+                <li>Describe your current technical skills</li>
+                <li>Rate your experience level in each area</li>
+                <li>Share any relevant projects or work experience</li>
+                <li>Specify your target role or career goals</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    
+    // Handle skill gaps if provided
+    const skillGaps = results.skill_gaps || [];
+    const recommendations = results.recommendations || [];
+    
+    if (skillGaps.length > 0 || recommendations.length > 0) {
+      return (
+        <div className="skill-gap-results">
+          <h3>Skill Gap Analysis</h3>
+          {skillGaps.length > 0 && (
+            <div className="skill-gaps">
+              <h4>Identified Skill Gaps</h4>
+              <div className="gaps-list">
+                {skillGaps.map((gap: any, index: number) => (
+                  <div key={index} className="gap-item">
+                    <div className="gap-skill">{gap.skill}</div>
+                    <div className="gap-level">Current: {gap.current_level} → Target: {gap.target_level}</div>
+                    <div className="gap-priority">{gap.priority} priority</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          
+          {recommendations.length > 0 && (
+            <div className="skill-recommendations">
+              <h4>Recommendations</h4>
+              <ul>
+                {recommendations.map((rec: string, index: number) => (
+                  <li key={index}>{rec}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      );
+    }
+    
+    return (
+      <div className="skill-gap-results">
+        <h3>Skill Gap Analysis</h3>
+        <p>Complete the skill assessment to receive detailed gap analysis and recommendations.</p>
+      </div>
+    );
+  };
+
   const renderResults = () => {
     if (!results) return null;
 
@@ -201,12 +269,7 @@ const CareerAnalysis: React.FC<CareerAnalysisProps> = ({ userId }) => {
           {selectedAnalysis === 'personality_assessment' && renderPersonalityResults(results.results)}
           {selectedAnalysis === 'interest_analysis' && renderInterestResults(results.results)}
           {selectedAnalysis === 'career_matching' && renderCareerMatches(results.results)}
-          {selectedAnalysis === 'skill_gap_analysis' && (
-            <div className="skill-gap-results">
-              <h3>Skill Gap Analysis</h3>
-              <p>Skill gap analysis results would be displayed here based on your current skills and target career goals.</p>
-            </div>
-          )}
+          {selectedAnalysis === 'skill_gap_analysis' && renderSkillGapResults(results.results)}
         </div>
       </div>
     );

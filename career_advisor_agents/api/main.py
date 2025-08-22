@@ -24,6 +24,11 @@ import uuid
 from core.llm_config import create_default_llm_config, AgentLLMFactory
 from core.agent_framework import AgentOrchestrator, AgentMetrics
 from agents.career_analyst import CareerAnalystAgent
+from agents.skills_assessor import SkillsAssessorAgent
+from agents.learning_orchestrator import LearningOrchestrationAgent
+from agents.progress_monitor import ProgressMonitorAgent
+from agents.opportunity_scout import OpportunityScoutAgent
+from agents.mentor_bot import MentorBotAgent
 from services.database import get_database, get_user_repository, DatabaseManager, UserRepository
 from services.career_counseling import CareerCounselingService
 from services.predictive_analytics import PredictiveAnalyticsService
@@ -66,10 +71,30 @@ async def lifespan(app: FastAPI):
         agent_orchestrator = AgentOrchestrator()
         agent_metrics = AgentMetrics()
         
-        # Create and register agents
+        # Create and register all agents
         career_analyst_llm = llm_factory.get_llm_for_agent("career_analyst")
         career_analyst = CareerAnalystAgent(career_analyst_llm)
         agent_orchestrator.register_agent(career_analyst)
+        
+        skills_assessor_llm = llm_factory.get_llm_for_agent("skills_assessor")
+        skills_assessor = SkillsAssessorAgent(skills_assessor_llm)
+        agent_orchestrator.register_agent(skills_assessor)
+        
+        learning_orchestrator_llm = llm_factory.get_llm_for_agent("learning_orchestrator")
+        learning_orchestrator = LearningOrchestrationAgent(learning_orchestrator_llm)
+        agent_orchestrator.register_agent(learning_orchestrator)
+        
+        progress_monitor_llm = llm_factory.get_llm_for_agent("progress_monitor")
+        progress_monitor = ProgressMonitorAgent(progress_monitor_llm)
+        agent_orchestrator.register_agent(progress_monitor)
+        
+        opportunity_scout_llm = llm_factory.get_llm_for_agent("opportunity_scout")
+        opportunity_scout = OpportunityScoutAgent(opportunity_scout_llm)
+        agent_orchestrator.register_agent(opportunity_scout)
+        
+        mentor_bot_llm = llm_factory.get_llm_for_agent("mentor_bot")
+        mentor_bot = MentorBotAgent(mentor_bot_llm)
+        agent_orchestrator.register_agent(mentor_bot)
         
         # Initialize services
         counseling_llm = llm_factory.get_llm_for_agent("mentor_bot")
@@ -182,11 +207,26 @@ async def get_user_profile(
     user_id: str,
     user_repo: UserRepository = Depends(get_user_repository)
 ):
-    """Get user profile"""
+    """Get user profile, create if doesn't exist"""
     try:
         user_profile = await user_repo.get_user(user_id)
         if not user_profile:
-            raise HTTPException(status_code=404, detail="User not found")
+            # Auto-create user with default profile
+            from core.data_models import UserProfile, EducationLevel, CareerStage
+            default_profile = UserProfile(
+                user_id=user_id,
+                name=f"User {user_id}",
+                email=f"{user_id}@example.com",
+                age=25,
+                location="Not specified",
+                education_level=EducationLevel.BACHELORS,
+                career_stage=CareerStage.ENTRY_LEVEL
+            )
+            success = await user_repo.create_user(default_profile)
+            if success:
+                user_profile = await user_repo.get_user(user_id)
+            else:
+                raise HTTPException(status_code=500, detail="Failed to create user profile")
         
         return user_profile.dict()
         
@@ -194,6 +234,35 @@ async def get_user_profile(
         raise
     except Exception as e:
         logger.error(f"Error retrieving user profile: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/users/{user_id}/reset")
+async def reset_user_data(
+    user_id: str,
+    user_repo: UserRepository = Depends(get_user_repository)
+):
+    """Reset all user data including questionnaire responses and analysis"""
+    try:
+        user_profile = await user_repo.get_user(user_id)
+        if not user_profile:
+            raise HTTPException(status_code=404, detail="User not found")
+        
+        # Reset questionnaire data
+        success = await user_repo.reset_questionnaire_data(user_id)
+        if not success:
+            raise HTTPException(status_code=500, detail="Failed to reset user data")
+        
+        return {
+            "message": "User data reset successfully",
+            "user_id": user_id,
+            "status": "reset_complete"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error resetting user data: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -399,10 +468,22 @@ async def career_analysis(
             "parameters": request.parameters
         }
         
-        # Route to career analyst agent
+        # Route to appropriate agent based on analysis type
+        agent_routing = {
+            "skill_gap_analysis": "skills_assessor",
+            "personality_assessment": "career_analyst",
+            "career_recommendations": "career_analyst",
+            "learning_path": "learning_orchestrator",
+            "progress_tracking": "progress_monitor",
+            "opportunity_matching": "opportunity_scout",
+            "mentoring": "mentor_bot"
+        }
+        
+        target_agent = agent_routing.get(request.analysis_type, "career_analyst")
+        
         response = await agent_orchestrator.route_message(
             message=f"Perform {request.analysis_type} analysis",
-            agent_name="career_analyst",
+            agent_name=target_agent,
             context=context
         )
         
@@ -410,21 +491,9 @@ async def career_analysis(
         
         # Record metrics
         if agent_metrics:
-            agent_metrics.record_interaction("career_analyst", processing_time / 1000, response.confidence)
+            agent_metrics.record_interaction(target_agent, processing_time / 1000, response.confidence)
         
-        # Save conversation in background
-        background_tasks.add_task(
-            save_conversation_background,
-            user_repo,
-            request.user_id,
-            "career_analyst",
-            f"Analysis request: {request.analysis_type}",
-            response.content,
-            context,
-            response.metadata,
-            response.confidence,
-            processing_time
-        )
+        # Note: Analysis requests are not saved as conversations to keep them separate from chat
         
         return CareerAnalysisResponse(
             request_id=str(uuid.uuid4()),
@@ -673,14 +742,20 @@ async def get_conversation_history(
     limit: int = 20,
     user_repo: UserRepository = Depends(get_user_repository)
 ):
-    """Get conversation history for user"""
+    """Get conversation history for user (excludes analysis requests)"""
     try:
         conversations = await user_repo.get_conversation_history(user_id, limit)
         
+        # Filter out analysis requests to keep them separate from chat
+        chat_conversations = [
+            conv for conv in conversations 
+            if not conv.user_message.startswith("Analysis request:")
+        ]
+        
         return {
             "user_id": user_id,
-            "conversations": [conv.dict() for conv in conversations],
-            "total_count": len(conversations)
+            "conversations": [conv.dict() for conv in chat_conversations],
+            "total_count": len(chat_conversations)
         }
         
     except Exception as e:

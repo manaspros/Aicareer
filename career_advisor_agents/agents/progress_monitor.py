@@ -3,13 +3,18 @@ from datetime import datetime, timedelta
 from langchain.tools import BaseTool
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-from ..core.agent_framework import BaseAgent, AgentResponse
-from ..core.data_models import ProgressUpdate, UserGoal
+import sys
+from pathlib import Path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
+from core.agent_framework import BaseAgent, AgentResponse
+from core.data_models import ProgressUpdate, UserGoal
 
 
 class ProgressAnalysisTool(BaseTool):
-    name = "progress_analyzer"
-    description = "Analyzes learning progress and identifies trends"
+    name: str = "progress_analyzer"
+    description: str = "Analyzes learning progress and identifies trends"
     
     def _run(self, progress_data: List[Dict[str, Any]], goals: List[Dict[str, Any]]) -> Dict[str, Any]:
         if not progress_data:
@@ -103,8 +108,8 @@ class ProgressAnalysisTool(BaseTool):
 
 
 class MotivationAssessmentTool(BaseTool):
-    name = "motivation_assessor"
-    description = "Assesses motivation levels and suggests interventions"
+    name: str = "motivation_assessor"
+    description: str = "Assesses motivation levels and suggests interventions"
     
     def _run(self, recent_activities: List[str], challenges: List[str], achievements: List[str]) -> Dict[str, Any]:
         # Calculate motivation indicators

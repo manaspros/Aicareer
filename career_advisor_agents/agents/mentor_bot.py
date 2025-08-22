@@ -3,13 +3,18 @@ from datetime import datetime
 from langchain.tools import BaseTool
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-from ..core.agent_framework import BaseAgent, AgentResponse
-from ..core.data_models import UserProfile
+import sys
+from pathlib import Path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
+from core.agent_framework import BaseAgent, AgentResponse
+from core.data_models import UserProfile
 
 
 class MotivationalSupportTool(BaseTool):
-    name = "motivational_supporter"
-    description = "Provides personalized motivational support based on user's situation"
+    name: str = "motivational_supporter"
+    description: str = "Provides personalized motivational support based on user's situation"
     
     def _run(self, user_situation: str, emotional_state: str, goals: List[str], challenges: List[str]) -> Dict[str, Any]:
         # Analyze the situation and emotional state
@@ -249,8 +254,8 @@ class MotivationalSupportTool(BaseTool):
 
 
 class CareerGuidanceTool(BaseTool):
-    name = "career_guidance_advisor"
-    description = "Provides comprehensive career guidance and strategic advice"
+    name: str = "career_guidance_advisor"
+    description: str = "Provides comprehensive career guidance and strategic advice"
     
     def _run(self, career_question: str, user_background: Dict[str, Any], context_info: Dict[str, Any] = None) -> Dict[str, Any]:
         question_lower = career_question.lower()

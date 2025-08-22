@@ -3,13 +3,18 @@ from datetime import datetime, timedelta
 from langchain.tools import BaseTool
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-from ..core.agent_framework import BaseAgent, AgentResponse
-from ..core.data_models import OpportunityMatch, UserProfile
+import sys
+from pathlib import Path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
+from core.agent_framework import BaseAgent, AgentResponse
+from core.data_models import OpportunityMatch, UserProfile
 
 
 class OpportunityMatchingTool(BaseTool):
-    name = "opportunity_matcher"
-    description = "Matches user profile with relevant opportunities"
+    name: str = "opportunity_matcher"
+    description: str = "Matches user profile with relevant opportunities"
     
     def _run(self, user_profile: Dict[str, Any], opportunity_type: str = "all", location_filter: str = None) -> List[Dict[str, Any]]:
         # Mock opportunity database - in production, this would connect to job boards, company APIs, etc.
@@ -244,8 +249,8 @@ class OpportunityMatchingTool(BaseTool):
 
 
 class ApplicationTrackerTool(BaseTool):
-    name = "application_tracker"
-    description = "Tracks application status and provides follow-up recommendations"
+    name: str = "application_tracker"
+    description: str = "Tracks application status and provides follow-up recommendations"
     
     def _run(self, applications: List[Dict[str, Any]]) -> Dict[str, Any]:
         if not applications:

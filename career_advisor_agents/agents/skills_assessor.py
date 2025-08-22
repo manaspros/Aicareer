@@ -4,13 +4,18 @@ from datetime import datetime
 from langchain.tools import BaseTool
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-from ..core.agent_framework import BaseAgent, AgentResponse
-from ..core.data_models import SkillAssessmentResult, SkillLevel, Skill
+import sys
+from pathlib import Path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
+from core.agent_framework import BaseAgent, AgentResponse
+from core.data_models import SkillAssessmentResult, SkillLevel, Skill
 
 
 class SkillBenchmarkTool(BaseTool):
-    name = "skill_benchmark"
-    description = "Benchmarks user's skill level against industry standards"
+    name: str = "skill_benchmark"
+    description: str = "Benchmarks user's skill level against industry standards"
     
     def _run(self, skill_name: str, responses: List[str], experience_years: float) -> Dict[str, Any]:
         # Skill benchmarking logic
@@ -84,8 +89,8 @@ class SkillBenchmarkTool(BaseTool):
 
 
 class SkillGapAnalysisTool(BaseTool):
-    name = "skill_gap_analysis"
-    description = "Identifies gaps between current skills and target role requirements"
+    name: str = "skill_gap_analysis"
+    description: str = "Identifies gaps between current skills and target role requirements"
     
     def _run(self, current_skills: List[Dict[str, Any]], target_role: str) -> Dict[str, Any]:
         # Role requirements database

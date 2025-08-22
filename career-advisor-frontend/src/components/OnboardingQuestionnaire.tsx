@@ -152,7 +152,7 @@ const OnboardingQuestionnaire: React.FC<QuestionnaireProps> = ({ userId, onCompl
         <div className="loading-state">
           <div className="loading-spinner"></div>
           <p>AI is generating your personalized questionnaire...</p>
-          <p className="loading-subtitle">This may take up to 30 seconds as we create questions tailored specifically to your profile.</p>
+          <p className="loading-subtitle">This may take up to 1 minute as we create questions tailored specifically to your profile.</p>
         </div>
       </div>
     );

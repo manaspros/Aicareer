@@ -650,6 +650,28 @@ class UserRepository:
             except Exception as e:
                 await session.rollback()
                 raise e
+    
+    async def reset_questionnaire_data(self, user_id: str) -> bool:
+        """Reset all questionnaire data for a user"""
+        async with self.db_manager.get_session() as session:
+            try:
+                db_user = await session.get(User, user_id)
+                if not db_user:
+                    return False
+                
+                # Reset all questionnaire-related fields
+                db_user.questionnaire_completed = False
+                db_user.questionnaire_responses = None
+                db_user.personality_insights = None
+                db_user.interest_insights = None
+                db_user.updated_at = datetime.utcnow()
+                
+                await session.commit()
+                return True
+                
+            except Exception as e:
+                await session.rollback()
+                raise e
 
 
 # Global database manager instance

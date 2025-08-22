@@ -4,13 +4,18 @@ from datetime import datetime, timedelta
 from langchain.tools import BaseTool
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-from ..core.agent_framework import BaseAgent, AgentResponse
-from ..core.data_models import LearningPath, SkillLevel
+import sys
+from pathlib import Path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
+from core.agent_framework import BaseAgent, AgentResponse
+from core.data_models import LearningPath, SkillLevel
 
 
 class LearningResourceTool(BaseTool):
-    name = "learning_resource_finder"
-    description = "Finds and curates learning resources based on skill and level"
+    name: str = "learning_resource_finder"
+    description: str = "Finds and curates learning resources based on skill and level"
     
     def _run(self, skill: str, current_level: str, target_level: str, learning_style: str = "mixed") -> Dict[str, Any]:
         # Curated learning resources database
@@ -131,8 +136,8 @@ class LearningResourceTool(BaseTool):
 
 
 class LearningScheduleTool(BaseTool):
-    name = "learning_schedule_optimizer"
-    description = "Creates optimized learning schedules based on available time and goals"
+    name: str = "learning_schedule_optimizer"
+    description: str = "Creates optimized learning schedules based on available time and goals"
     
     def _run(self, available_hours_per_week: int, target_skills: List[Dict], deadline_weeks: int = None) -> Dict[str, Any]:
         # Prioritize skills based on importance and difficulty

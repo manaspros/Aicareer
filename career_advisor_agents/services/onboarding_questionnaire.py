@@ -110,7 +110,7 @@ Importance: 1-5 (5 = most important)"""
             import asyncio
             response = await asyncio.wait_for(
                 self.llm.ainvoke([{"role": "user", "content": prompt}]), 
-                timeout=15.0  # 15 second timeout for AI generation
+                timeout=60.0  # 60 second timeout for AI generation
             )
             ai_response = response.content if hasattr(response, 'content') else str(response)
             
@@ -135,7 +135,7 @@ Importance: 1-5 (5 = most important)"""
             return questions[:20]  # Limit to 20 questions max
             
         except asyncio.TimeoutError:
-            print(f"AI questionnaire generation timed out after 15 seconds - using fallback questions")
+            print(f"AI questionnaire generation timed out after 60 seconds - using fallback questions")
             # Return fallback questions when AI takes too long
             return self._get_fallback_questions()
         except Exception as e:
@@ -320,8 +320,12 @@ Provide a comprehensive analysis in JSON format with these sections:
 Be specific, actionable, and personalized. Focus on insights that will help with career planning and decision-making."""
 
         try:
-            # Call Google Gemini AI
-            response = await self.llm.ainvoke([{"role": "user", "content": prompt}])
+            # Call Google Gemini AI with timeout
+            import asyncio
+            response = await asyncio.wait_for(
+                self.llm.ainvoke([{"role": "user", "content": prompt}]),
+                timeout=45.0  # 45 second timeout for AI analysis
+            )
             ai_response = response.content if hasattr(response, 'content') else str(response)
             
             # Extract JSON from response
@@ -329,6 +333,25 @@ Be specific, actionable, and personalized. Focus on insights that will help with
             
             return analysis
             
+        except asyncio.TimeoutError:
+            print(f"AI questionnaire analysis timed out after 45 seconds - using fallback analysis")
+            # Return basic analysis when AI takes too long
+            return {
+                "personality_insights": {
+                    "work_style": "Analysis timed out - please try again or contact support",
+                    "key_strengths": ["Patience", "Persistence"]
+                },
+                "interest_insights": {
+                    "primary_interests": ["Will be analyzed in future sessions"],
+                    "industry_alignment": ["To be determined"]
+                },
+                "career_direction": {
+                    "potential_career_paths": ["Multiple paths available - analysis needed"]
+                },
+                "recommendations": {
+                    "immediate_actions": ["Retake questionnaire when system is less busy", "Contact support for assistance"]
+                }
+            }
         except Exception as e:
             print(f"Error analyzing responses: {str(e)}")
             # Return basic analysis
